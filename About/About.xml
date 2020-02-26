@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Warframe M-A-V Pack (Continued)</name>
+	<packageId>Mlie.WarframeMAV</packageId>
+	<author>Mlie</author>
+	<url>https://github.com/emipa606/WarframeMAV</url>
+	<supportedVersions>
+		<li>1.0</li>
+		<li>1.1</li>
+	</supportedVersions>
+	<description>
+Continuation of AKreedz mod, updated for RimWorld 1.1
+https://steamcommunity.com/sharedfiles/filedetails/?id=1529582998
+
+Addon Pack of Warframe MOD
+
+Add 3 new Warframe
+
+
+Mesa
+Ash
+Valkyr
+	</description>
+</ModMetaData>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!-- Ash -->
+<ThingDef ParentName="WFBodypartBase">
+    <defName>WFPart_Ash_Head</defName>
+    <label>Ash neuroptics part</label>
+    <description>Miscellaneous gears, capacitors, circuit boards, tubes, wheels, sensors, wires, chips, processors, and other electronic and industrial parts. Necessary for assembling complex machines or electronics.</description>
+    <graphicData>
+      <texPath>Items/WFHead</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>(0.8,0.8)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>32</MarketValue>
+	</statBases>
+</ThingDef>
+<ThingDef ParentName="WFBodypartBase">
+    <defName>WFPart_Ash_Body</defName>
+    <label>Ash chassis part</label>
+    <description>Miscellaneous gears, capacitors, circuit boards, tubes, wheels, sensors, wires, chips, processors, and other electronic and industrial parts. Necessary for assembling complex machines or electronics.</description>
+    <graphicData>
+      <texPath>Items/WFBody</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>32</MarketValue>
+	</statBases>
+</ThingDef>
+<ThingDef ParentName="WFBodypartBase">
+    <defName>WFPart_Ash_Inside</defName>
+    <label>Ash system part</label>
+    <description>Miscellaneous gears, capacitors, circuit boards, tubes, wheels, sensors, wires, chips, processors, and other electronic and industrial parts. Necessary for assembling complex machines or electronics.</description>
+    <graphicData>
+      <texPath>Items/WFInside</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>32</MarketValue>
+	</statBases>
+</ThingDef>
+
+<!-- Mesa -->
+<ThingDef ParentName="WFBodypartBase">
+    <defName>WFPart_Mesa_Head</defName>
+    <label>Mesa neuroptics part</label>
+    <description>Miscellaneous gears, capacitors, circuit boards, tubes, wheels, sensors, wires, chips, processors, and other electronic and industrial parts. Necessary for assembling complex machines or electronics.</description>
+    <graphicData>
+      <texPath>Items/WFHead</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>(0.8,0.8)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>32</MarketValue>
+	</statBases>
+</ThingDef>
+<ThingDef ParentName="WFBodypartBase">
+    <defName>WFPart_Mesa_Body</defName>
+    <label>Mesa chassis part</label>
+    <description>Miscellaneous gears, capacitors, circuit boards, tubes, wheels, sensors, wires, chips, processors, and other electronic and industrial parts. Necessary for assembling complex machines or electronics.</description>
+    <graphicData>
+      <texPath>Items/WFBody</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>32</MarketValue>
+	</statBases>
+</ThingDef>
+<ThingDef ParentName="WFBodypartBase">
+    <defName>WFPart_Mesa_Inside</defName>
+    <label>Mesa system part</label>
+    <description>Miscellaneous gears, capacitors, circuit boards, tubes, wheels, sensors, wires, chips, processors, and other electronic and industrial parts. Necessary for assembling complex machines or electronics.</description>
+    <graphicData>
+      <texPath>Items/WFInside</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>32</MarketValue>
+	</statBases>
+</ThingDef>
+
+<!-- Valkyr -->
+<ThingDef ParentName="WFBodypartBase">
+    <defName>WFPart_Valkyr_Head</defName>
+    <label>Valkyr neuroptics part</label>
+    <description>Miscellaneous gears, capacitors, circuit boards, tubes, wheels, sensors, wires, chips, processors, and other electronic and industrial parts. Necessary for assembling complex machines or electronics.</description>
+    <graphicData>
+      <texPath>Items/WFHead</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>(0.8,0.8)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>32</MarketValue>
+	</statBases>
+</ThingDef>
+<ThingDef ParentName="WFBodypartBase">
+    <defName>WFPart_Valkyr_Body</defName>
+    <label>Valkyr chassis part</label>
+    <description>Miscellaneous gears, capacitors, circuit boards, tubes, wheels, sensors, wires, chips, processors, and other electronic and industrial parts. Necessary for assembling complex machines or electronics.</description>
+    <graphicData>
+      <texPath>Items/WFBody</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>32</MarketValue>
+	</statBases>
+</ThingDef>
+<ThingDef ParentName="WFBodypartBase">
+    <defName>WFPart_Valkyr_Inside</defName>
+    <label>Valkyr system part</label>
+    <description>Miscellaneous gears, capacitors, circuit boards, tubes, wheels, sensors, wires, chips, processors, and other electronic and industrial parts. Necessary for assembling complex machines or electronics.</description>
+    <graphicData>
+      <texPath>Items/WFInside</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>32</MarketValue>
+	</statBases>
+</ThingDef>
+
+</Defs>

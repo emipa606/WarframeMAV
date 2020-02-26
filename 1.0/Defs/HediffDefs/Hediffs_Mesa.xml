@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>WFMesa1Skill_Start</defName>
+    <label>Ballistic Battery(Storaging)</label>
+    <isBad>false</isBad>
+    <hediffClass>WarframeMAV.Skills.Mesas.Hediff_Mesa1SkillA</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>0.001</initialSeverity>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>WFMesa1Skill_End</defName>
+    <label>Ballistic Battery(Ready)</label>
+    <isBad>false</isBad>
+    <hediffClass>WarframeMAV.Skills.Mesas.Hediff_Mesa1SkillB</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>0.001</initialSeverity>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>WFMesa2Skill_Mesa</defName>
+    <label>Shooting Gallery</label>
+    <isBad>false</isBad>
+    <hediffClass>WarframeMAV.Skills.Mesas.Hediff_Mesa2Skill</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>0.001</initialSeverity>
+  </HediffDef>
+  
+
+
+  <HediffDef>
+    <defName>WFMesa3Skill_Mesa</defName>
+    <label>Shatter Shield</label>
+    <isBad>false</isBad>
+    <hediffClass>WarframeMAV.Skills.Mesas.Hediff_Mesa3Skill</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>0.001</initialSeverity>
+  </HediffDef>
+	
+	
+  <HediffDef>
+    <defName>WFMesa4Skill_Nomove</defName>
+    <label>Standing(Mesa)</label>
+    <isBad>false</isBad>
+    <hediffClass>Warframe.Skills.WFPublic.Hediff_NoMove</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>0.001</initialSeverity>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-1</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+<!-- Ash-->
+  
+  <ThingDef ParentName="WarframeApparelBase">
+    <defName>WF_Ash_Belt</defName>
+    <label>Ash Belt</label>
+    <description>The latest generation of shield of Polarisbloc has not been produced, only for important personnel.\n\nThis shield will counterattack the attackers when they are attacked.Although the counterattack has the time of cooling, it still needs to be careful because the counter attack is very accurate.</description>
+    <thingClass>Warframe.WarframeBelt</thingClass>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <Mass>2.4</Mass>
+      <EnergyShieldRechargeRate>0.13</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax>1.0</EnergyShieldEnergyMax>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+	<comps>
+	  <li Class="Warframe.CompProperties_HPSP">
+        <compClass>Warframe.CompHPSP</compClass>
+        <HP>150</HP>
+		<SP>100</SP>
+	  </li>
+	</comps>
+    <apparel>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+      <tags>
+        <li>WFAshBelt</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+  
+  <ThingDef ParentName="WarframeApparelBase">
+    <defName>WF_Ash_Armor</defName>
+    <label>Ash Armor</label>
+    <description>The standard armor for the security force provides a small amount of defense and moving.</description>
+    <thingClass>Warframe.WarframeArmor</thingClass>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+    <techLevel>Ultra</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+	<comps>
+	  <li Class="Warframe.CompProperties_WarframeSkill">
+        <compClass>Warframe.CompWarframeSkill</compClass>
+        <mana1>25</mana1>
+		<mana2>35</mana2>
+		<mana3>25</mana3>
+		<mana4>75</mana4>
+	  </li>
+	</comps>
+    <statBases>
+      <Mass>8</Mass>
+      <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.2</ArmorRating_Heat>
+      <Insulation_Cold>45</Insulation_Cold>
+      <Insulation_Heat>45</Insulation_Heat>
+      <Beauty>0</Beauty>
+      <EquipDelay>8</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>1</MoveSpeed>
+      <Flammability>-0.25</Flammability>
+      <MeleeDodgeChance>2</MeleeDodgeChance>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Neck</li>
+        <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Apparel/Ash/AshArmor</wornGraphicPath>
+      <layers>
+        <li>OnSkin</li>
+        <li>Shell</li>
+      </layers>
+      <tags>
+        <li>WFAshArmor</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="WarframeApparelBase">
+    <defName>WF_Ash_Head</defName>
+    <label>Ash Head</label>
+    <thingClass>Warframe.WarframeHead</thingClass>
+    <description>The universal tactical goggles produced by Polarisbloc can effectively enhance the sight ability.</description>
+    <tickerType>Normal</tickerType>
+    <thingCategories>
+      <li>Headgear</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CowboyHat/CowboyHat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>1.7</Mass>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <Insulation_Cold>-10</Insulation_Cold>
+      <Insulation_Heat>10</Insulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <AimingDelayFactor>-0.1</AimingDelayFactor>
+      <ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+      <MeleeDodgeChance>0.5</MeleeDodgeChance>
+      <MeleeHitChance>0.5</MeleeHitChance>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Neck</li>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Apparel/Ash/AshHead</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>WFAshHead</li>
+      </tags>
+      <hatRenderedFrontOfFace>true</hatRenderedFrontOfFace>
+    </apparel>
+  </ThingDef>
+
+<!-- Mesa-->
+  
+  <ThingDef ParentName="WarframeApparelBase">
+    <defName>WF_Mesa_Belt</defName>
+    <label>Mesa Belt</label>
+    <description>The latest generation of shield of Polarisbloc has not been produced, only for important personnel.\n\nThis shield will counterattack the attackers when they are attacked.Although the counterattack has the time of cooling, it still needs to be careful because the counter attack is very accurate.</description>
+    <thingClass>Warframe.WarframeBelt</thingClass>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <Mass>2.4</Mass>
+      <EnergyShieldRechargeRate>0.13</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax>0.75</EnergyShieldEnergyMax>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+	<comps>
+	  <li Class="Warframe.CompProperties_HPSP">
+        <compClass>Warframe.CompHPSP</compClass>
+        <HP>125</HP>
+		<SP>100</SP>
+	  </li>
+	</comps>
+    <apparel>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+      <tags>
+        <li>WFMesaBelt</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+  
+  <ThingDef ParentName="WarframeApparelBase">
+    <defName>WF_Mesa_Armor</defName>
+    <label>Mesa Armor</label>
+    <description>The standard armor for the security force provides a small amount of defense and moving.</description>
+    <thingClass>Warframe.WarframeArmor</thingClass>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+    <techLevel>Ultra</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+	<comps>
+	  <li Class="Warframe.CompProperties_WarframeSkill">
+        <compClass>Warframe.CompWarframeSkill</compClass>
+        <mana1>25</mana1>
+		<mana2>50</mana2>
+		<mana3>75</mana3>
+		<mana4>25</mana4>
+	  </li>
+	</comps>
+    <statBases>
+      <Mass>8</Mass>
+      <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.2</ArmorRating_Heat>
+      <Insulation_Cold>45</Insulation_Cold>
+      <Insulation_Heat>45</Insulation_Heat>
+      <Beauty>0</Beauty>
+      <EquipDelay>8</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>1</MoveSpeed>
+      <Flammability>-0.25</Flammability>
+      <MeleeDodgeChance>2</MeleeDodgeChance>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Neck</li>
+        <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Apparel/Mesa/MesaArmor</wornGraphicPath>
+      <layers>
+        <li>OnSkin</li>
+        <li>Shell</li>
+      </layers>
+      <tags>
+        <li>WFMesaArmor</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="WarframeApparelBase">
+    <defName>WF_Mesa_Head</defName>
+    <label>Mesa Head</label>
+    <thingClass>Warframe.WarframeHead</thingClass>
+    <description>The universal tactical goggles produced by Polarisbloc can effectively enhance the sight ability.</description>
+    <tickerType>Normal</tickerType>
+    <thingCategories>
+      <li>Headgear</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CowboyHat/CowboyHat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>1.7</Mass>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <Insulation_Cold>-10</Insulation_Cold>
+      <Insulation_Heat>10</Insulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <AimingDelayFactor>-0.1</AimingDelayFactor>
+      <ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+      <MeleeDodgeChance>0.5</MeleeDodgeChance>
+      <MeleeHitChance>0.5</MeleeHitChance>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Neck</li>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Apparel/Mesa/MesaHead</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>WFMesaHead</li>
+      </tags>
+      <hatRenderedFrontOfFace>true</hatRenderedFrontOfFace>
+    </apparel>
+  </ThingDef>
+
+ <!-- Valkyr-->
+  
+  <ThingDef ParentName="WarframeApparelBase">
+    <defName>WF_Valkyr_Belt</defName>
+    <label>Valkyr Belt</label>
+    <description>The latest generation of shield of Polarisbloc has not been produced, only for important personnel.\n\nThis shield will counterattack the attackers when they are attacked.Although the counterattack has the time of cooling, it still needs to be careful because the counter attack is very accurate.</description>
+    <thingClass>Warframe.WarframeBelt</thingClass>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <Mass>2.4</Mass>
+      <EnergyShieldRechargeRate>0.14</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax>1.5</EnergyShieldEnergyMax>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+	<comps>
+	  <li Class="Warframe.CompProperties_HPSP">
+        <compClass>Warframe.CompHPSP</compClass>
+        <HP>100</HP>
+		<SP>100</SP>
+	  </li>
+	</comps>
+    <apparel>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+      <tags>
+        <li>WFValkyrBelt</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+  
+  <ThingDef ParentName="WarframeApparelBase">
+    <defName>WF_Valkyr_Armor</defName>
+    <label>Valkyr Armor</label>
+    <description>The standard armor for the security force provides a small amount of defense and moving.</description>
+    <thingClass>Warframe.WarframeArmor</thingClass>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+    <techLevel>Ultra</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+	<comps>
+	  <li Class="Warframe.CompProperties_WarframeSkill">
+        <compClass>Warframe.CompWarframeSkill</compClass>
+        <mana1>25</mana1>
+		<mana2>75</mana2>
+		<mana3>5</mana3>
+		<mana4>25</mana4>
+	  </li>
+	</comps>
+    <statBases>
+      <Mass>8</Mass>
+      <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.2</ArmorRating_Heat>
+      <Insulation_Cold>45</Insulation_Cold>
+      <Insulation_Heat>45</Insulation_Heat>
+      <Beauty>0</Beauty>
+      <EquipDelay>8</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>1</MoveSpeed>
+      <Flammability>-0.25</Flammability>
+      <MeleeDodgeChance>2</MeleeDodgeChance>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Neck</li>
+        <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Apparel/Valkyr/ValkyrArmor</wornGraphicPath>
+      <layers>
+        <li>OnSkin</li>
+        <li>Shell</li>
+      </layers>
+      <tags>
+        <li>WFValkyrArmor</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="WarframeApparelBase">
+    <defName>WF_Valkyr_Head</defName>
+    <label>Valkyr Head</label>
+    <thingClass>Warframe.WarframeHead</thingClass>
+    <description>The universal tactical goggles produced by Polarisbloc can effectively enhance the sight ability.</description>
+    <tickerType>Normal</tickerType>
+    <thingCategories>
+      <li>Headgear</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CowboyHat/CowboyHat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>1.7</Mass>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <Insulation_Cold>-10</Insulation_Cold>
+      <Insulation_Heat>10</Insulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <AimingDelayFactor>-0.1</AimingDelayFactor>
+      <ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+      <MeleeDodgeChance>0.5</MeleeDodgeChance>
+      <MeleeHitChance>0.5</MeleeHitChance>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Neck</li>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Apparel/Valkyr/ValkyrHead</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>WFValkyrHead</li>
+      </tags>
+      <hatRenderedFrontOfFace>true</hatRenderedFrontOfFace>
+    </apparel>
+  </ThingDef>
+ 
+  
+  
+  </Defs>

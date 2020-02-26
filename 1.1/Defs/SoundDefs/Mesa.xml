@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+  
+  <SoundDef>
+    <defName>Mesa_1Skill</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxVoices>1</maxVoices>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Mesa/Mesa1</clipPath>
+          </li>
+        </grains>
+        <volumeRange>
+          <min>50</min>
+          <max>65</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>Mesa_2Skill</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxVoices>1</maxVoices>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Mesa/Mesa2</clipPath>
+          </li>
+        </grains>
+        <volumeRange>
+          <min>50</min>
+          <max>65</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>Mesa_2SkillEnd</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxVoices>1</maxVoices>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Mesa/Mesa2End</clipPath>
+          </li>
+        </grains>
+        <volumeRange>
+          <min>50</min>
+          <max>65</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>Mesa_3Skill</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxVoices>1</maxVoices>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Mesa/Mesa3</clipPath>
+          </li>
+        </grains>
+        <volumeRange>
+          <min>50</min>
+          <max>65</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>Mesa_4Skill</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxVoices>1</maxVoices>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Mesa/Mesa4</clipPath>
+          </li>
+        </grains>
+        <volumeRange>
+          <min>50</min>
+          <max>65</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>Mesa_PeaceMakerShot</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxVoices>1</maxVoices>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Mesa/Mesa_Shot</clipPath>
+          </li>
+        </grains>
+        <volumeRange>
+          <min>50</min>
+          <max>65</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>Mesa_4SkillEnd</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxVoices>1</maxVoices>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Mesa/Mesa4End</clipPath>
+          </li>
+        </grains>
+        <volumeRange>
+          <min>50</min>
+          <max>65</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+ 
+</Defs>
