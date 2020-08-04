@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Ash -->
+
+  <Make_Ash_Head.label>make Ash head</Make_Ash_Head.label>
+  <Make_Ash_Body.label>make Ash body</Make_Ash_Body.label>
+  <Make_Ash_Inside.label>make Ash inside</Make_Ash_Inside.label>
+
+
+  <!-- Mesa -->
+
+  <Make_Mesa_Head.label>make Mesa head</Make_Mesa_Head.label>
+  <Make_Mesa_Body.label>make Mesa body</Make_Mesa_Body.label>
+  <Make_Mesa_Inside.label>make Mesa inside</Make_Mesa_Inside.label>
+
+
+  <!-- Valkyr -->
+
+  <Make_Valkyr_Head.label>make Valkyr head</Make_Valkyr_Head.label>
+  <Make_Valkyr_Body.label>make Valkyr body</Make_Valkyr_Body.label>
+  <Make_Valkyr_Inside.label>make Valkyr inside</Make_Valkyr_Inside.label>
+
+
+</LanguageData>

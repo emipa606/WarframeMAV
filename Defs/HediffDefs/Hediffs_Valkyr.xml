@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <HediffDef>
     <defName>WFValkyr1Skill_Mul</defName>
@@ -8,8 +8,6 @@
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <initialSeverity>0.001</initialSeverity>
   </HediffDef>
-  
-  
   <HediffDef>
     <defName>WFValkyr2Skill_Enemy</defName>
     <label>Warcry(Enemy)</label>
@@ -28,7 +26,6 @@
       </li>
     </stages>
   </HediffDef>
-  
   <HediffDef>
     <defName>WFValkyr2Skill_Ally</defName>
     <label>Warcry(Ally)</label>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <HediffDef>
     <defName>WFMesa1Skill_Start</defName>
@@ -8,7 +8,6 @@
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <initialSeverity>0.001</initialSeverity>
   </HediffDef>
-  
   <HediffDef>
     <defName>WFMesa1Skill_End</defName>
     <label>Ballistic Battery(Ready)</label>
@@ -17,7 +16,6 @@
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <initialSeverity>0.001</initialSeverity>
   </HediffDef>
-  
   <HediffDef>
     <defName>WFMesa2Skill_Mesa</defName>
     <label>Shooting Gallery</label>
@@ -26,9 +24,6 @@
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <initialSeverity>0.001</initialSeverity>
   </HediffDef>
-  
-
-
   <HediffDef>
     <defName>WFMesa3Skill_Mesa</defName>
     <label>Shatter Shield</label>
@@ -37,8 +32,6 @@
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <initialSeverity>0.001</initialSeverity>
   </HediffDef>
-	
-	
   <HediffDef>
     <defName>WFMesa4Skill_Nomove</defName>
     <label>Standing(Mesa)</label>

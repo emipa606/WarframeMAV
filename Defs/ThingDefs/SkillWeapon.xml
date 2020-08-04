@@ -1,6 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
   <ThingDef ParentName="BaseBullet">
     <defName>Bullet_MesaBullet</defName>
     <label>Mesa Bullet</label>
@@ -16,7 +15,6 @@
       <speed>200</speed>
     </projectile>
   </ThingDef>
-
   <ThingDef ParentName="BaseHumanGun">
     <defName>Mesa_SkillGun</defName>
     <label>peacemaker</label>
@@ -58,10 +56,6 @@
       </li>
     </verbs>
   </ThingDef>
-  
-  
-  
-  
   <ThingDef ParentName="BaseWeapon">
     <defName>Valkyr_SkillBlade</defName>
     <label>Valkyr Talons</label>
@@ -98,6 +92,6 @@
         <power>10</power>
         <cooldownTime>1</cooldownTime>
       </li>
-	</tools>
+    </tools>
   </ThingDef>
 </Defs>

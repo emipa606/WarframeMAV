@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Ash -->
+
+  <WFPart_Ash_Head.label>Ash neuroptics part</WFPart_Ash_Head.label>
+  <WFPart_Ash_Head.description>Ash neuroptics part.</WFPart_Ash_Head.description>
+
+  <WFPart_Ash_Body.label>Ash chassis part</WFPart_Ash_Body.label>
+  <WFPart_Ash_Body.description>Ash chassis part.</WFPart_Ash_Body.description>
+
+  <WFPart_Ash_Inside.label>Ash system part</WFPart_Ash_Inside.label>
+  <WFPart_Ash_Inside.description>Ash system part.</WFPart_Ash_Inside.description>
+
+
+  <!-- Mesa -->
+
+  <WFPart_Mesa_Head.label>Mesa neuroptics part</WFPart_Mesa_Head.label>
+  <WFPart_Mesa_Head.description>Mesa neuroptics part.</WFPart_Mesa_Head.description>
+
+  <WFPart_Mesa_Body.label>Mesa chassis part</WFPart_Mesa_Body.label>
+  <WFPart_Mesa_Body.description>Mesa chassis part.</WFPart_Mesa_Body.description>
+
+  <WFPart_Mesa_Inside.label>Mesa system part</WFPart_Mesa_Inside.label>
+  <WFPart_Mesa_Inside.description>Mesa system part.</WFPart_Mesa_Inside.description>
+
+
+  <!-- Valkyr -->
+
+  <WFPart_Valkyr_Head.label>Valkyr neuroptics part</WFPart_Valkyr_Head.label>
+  <WFPart_Valkyr_Head.description>Valkyr neuroptics part.</WFPart_Valkyr_Head.description>
+
+  <WFPart_Valkyr_Body.label>Valkyr chassis part</WFPart_Valkyr_Body.label>
+  <WFPart_Valkyr_Body.description>Valkyr chassis part.</WFPart_Valkyr_Body.description>
+
+  <WFPart_Valkyr_Inside.label>Valkyr system part</WFPart_Valkyr_Inside.label>
+  <WFPart_Valkyr_Inside.description>Valkyr system part.</WFPart_Valkyr_Inside.description>
+
+
+</LanguageData>

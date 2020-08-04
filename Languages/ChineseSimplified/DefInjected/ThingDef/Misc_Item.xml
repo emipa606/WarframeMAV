@@ -1,35 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
-  
   <WFPart_Ash_Head.label>Ash 头部神经元组件</WFPart_Ash_Head.label>
   <WFPart_Ash_Head.description>Ash 头部神经元组件.</WFPart_Ash_Head.description>
-
   <WFPart_Ash_Body.label>Ash 机体组件</WFPart_Ash_Body.label>
   <WFPart_Ash_Body.description>Ash 机体组件.</WFPart_Ash_Body.description>
-  
   <WFPart_Ash_Inside.label>Ash 系统组件</WFPart_Ash_Inside.label>
   <WFPart_Ash_Inside.description>Ash 系统组件.</WFPart_Ash_Inside.description>
-  
-  
-  
   <WFPart_Mesa_Head.label>Mesa 头部神经元组件</WFPart_Mesa_Head.label>
   <WFPart_Mesa_Head.description>Mesa 头部神经元组件.</WFPart_Mesa_Head.description>
-
   <WFPart_Mesa_Body.label>Mesa 机体组件</WFPart_Mesa_Body.label>
   <WFPart_Mesa_Body.description>Mesa 机体组件.</WFPart_Mesa_Body.description>
-  
   <WFPart_Mesa_Inside.label>Mesa 系统组件</WFPart_Mesa_Inside.label>
   <WFPart_Mesa_Inside.description>Mesa 系统组件.</WFPart_Mesa_Inside.description>
-  
-  
   <WFPart_Valkyr_Head.label>Valkyr 头部神经元组件</WFPart_Valkyr_Head.label>
   <WFPart_Valkyr_Head.description>Valkyr 头部神经元组件.</WFPart_Valkyr_Head.description>
-
   <WFPart_Valkyr_Body.label>Valkyr 机体组件</WFPart_Valkyr_Body.label>
   <WFPart_Valkyr_Body.description>Valkyr 机体组件.</WFPart_Valkyr_Body.description>
-  
   <WFPart_Valkyr_Inside.label>Valkyr 系统组件</WFPart_Valkyr_Inside.label>
   <WFPart_Valkyr_Inside.description>Valkyr 系统组件.</WFPart_Valkyr_Inside.description>
-
 </LanguageData>

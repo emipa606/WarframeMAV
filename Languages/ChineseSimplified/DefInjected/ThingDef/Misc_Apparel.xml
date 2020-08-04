@@ -1,32 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <WF_Ash_Belt.label>Warframe 腰带</WF_Ash_Belt.label>
   <WF_Ash_Belt.description>Ash 腰带.</WF_Ash_Belt.description>
-
   <WF_Ash_Armor.label>Warframe 装甲</WF_Ash_Armor.label>
   <WF_Ash_Armor.description>Ash 装甲.</WF_Ash_Armor.description>
-
   <WF_Ash_Head.label>Warframe 头部</WF_Ash_Head.label>
   <WF_Ash_Head.description>Ash 头部.</WF_Ash_Head.description>
-  
-
   <WF_Mesa_Belt.label>Warframe 腰带</WF_Mesa_Belt.label>
   <WF_Mesa_Belt.description>Mesa 腰带.</WF_Mesa_Belt.description>
-
   <WF_Mesa_Armor.label>Warframe 装甲</WF_Mesa_Armor.label>
   <WF_Mesa_Armor.description>Mesa 装甲.</WF_Mesa_Armor.description>
-
   <WF_Mesa_Head.label>Warframe 头部</WF_Mesa_Head.label>
   <WF_Mesa_Head.description>Mesa 头部.</WF_Mesa_Head.description>
-  
-
   <WF_Valkyr_Belt.label>Warframe 腰带</WF_Valkyr_Belt.label>
   <WF_Valkyr_Belt.description>Valkyr 腰带.</WF_Valkyr_Belt.description>
-
   <WF_Valkyr_Armor.label>Warframe 装甲</WF_Valkyr_Armor.label>
   <WF_Valkyr_Armor.description>Valkyr 装甲.</WF_Valkyr_Armor.description>
-
   <WF_Valkyr_Head.label>Warframe 头部</WF_Valkyr_Head.label>
   <WF_Valkyr_Head.description>Valkyr 头部.</WF_Valkyr_Head.description>
 </LanguageData>

@@ -1,32 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+  <!--<WF_Ash_Belt.label>Warframe Belt</WF_Ash_Belt.label>-->
+  <!--<WF_Ash_Belt.description>Ash Belt.</WF_Ash_Belt.description>-->
+  <!--<WF_Ash_Armor.label>Warframe Armor</WF_Ash_Armor.label>-->
+  <!--<WF_Ash_Armor.description>Ash Armor.</WF_Ash_Armor.description>-->
+  <!--<WF_Ash_Head.label>Warframe Head</WF_Ash_Head.label>-->
+  <!--<WF_Ash_Head.description>Ash Head.</WF_Ash_Head.description>-->
+  <!--<WF_Mesa_Belt.label>Warframe Belt</WF_Mesa_Belt.label>-->
+  <!--<WF_Mesa_Belt.description>Mesa Belt.</WF_Mesa_Belt.description>-->
+  <!--<WF_Mesa_Armor.label>Warframe Armor</WF_Mesa_Armor.label>-->
+  <!--<WF_Mesa_Armor.description>Mesa Armor.</WF_Mesa_Armor.description>-->
+  <!--<WF_Mesa_Head.label>Warframe Head</WF_Mesa_Head.label>-->
+  <!--<WF_Mesa_Head.description>Mesa Head.</WF_Mesa_Head.description>-->
+  <!--<WF_Valkyrie_Belt.label>Warframe Belt</WF_Valkyrie_Belt.label>-->
+  <!--<WF_Valkyrie_Belt.description>Valkyrie Belt.</WF_Valkyrie_Belt.description>-->
+  <!--<WF_Valkyrie_Armor.label>Warframe Armor</WF_Valkyrie_Armor.label>-->
+  <!--<WF_Valkyrie_Armor.description>Valkyrie Armor.</WF_Valkyrie_Armor.description>-->
+  <!--<WF_Valkyrie_Head.label>Warframe Head</WF_Valkyrie_Head.label>-->
+  <!--<WF_Valkyrie_Head.description>Valkyrie Head.</WF_Valkyrie_Head.description>-->
 
-  <WF_Ash_Belt.label>Warframe Belt</WF_Ash_Belt.label>
-  <WF_Ash_Belt.description>Ash Belt.</WF_Ash_Belt.description>
-
-  <WF_Ash_Armor.label>Warframe Armor</WF_Ash_Armor.label>
-  <WF_Ash_Armor.description>Ash Armor.</WF_Ash_Armor.description>
-
-  <WF_Ash_Head.label>Warframe Head</WF_Ash_Head.label>
-  <WF_Ash_Head.description>Ash Head.</WF_Ash_Head.description>
-  
-
-  <WF_Mesa_Belt.label>Warframe Belt</WF_Mesa_Belt.label>
-  <WF_Mesa_Belt.description>Mesa Belt.</WF_Mesa_Belt.description>
-
-  <WF_Mesa_Armor.label>Warframe Armor</WF_Mesa_Armor.label>
-  <WF_Mesa_Armor.description>Mesa Armor.</WF_Mesa_Armor.description>
-
-  <WF_Mesa_Head.label>Warframe Head</WF_Mesa_Head.label>
-  <WF_Mesa_Head.description>Mesa Head.</WF_Mesa_Head.description>
-  
-
-  <WF_Valkyrie_Belt.label>Warframe Belt</WF_Valkyrie_Belt.label>
-  <WF_Valkyrie_Belt.description>Valkyrie Belt.</WF_Valkyrie_Belt.description>
-
-  <WF_Valkyrie_Armor.label>Warframe Armor</WF_Valkyrie_Armor.label>
-  <WF_Valkyrie_Armor.description>Valkyrie Armor.</WF_Valkyrie_Armor.description>
-
-  <WF_Valkyrie_Head.label>Warframe Head</WF_Valkyrie_Head.label>
-  <WF_Valkyrie_Head.description>Valkyrie Head.</WF_Valkyrie_Head.description>
 </LanguageData>

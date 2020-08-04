@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Defs>
-  
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
   <SoundDef>
     <defName>Valkyr_1Skill</defName>
     <context>MapOnly</context>
@@ -20,7 +20,6 @@
       </li>
     </subSounds>
   </SoundDef>
-  
   <SoundDef>
     <defName>Valkyr_2Skill</defName>
     <context>MapOnly</context>
@@ -41,7 +40,6 @@
       </li>
     </subSounds>
   </SoundDef>
-
   <SoundDef>
     <defName>Valkyr_3Skill</defName>
     <context>MapOnly</context>
@@ -62,7 +60,6 @@
       </li>
     </subSounds>
   </SoundDef>
-  
   <SoundDef>
     <defName>Valkyr_4Skill</defName>
     <context>MapOnly</context>
@@ -83,8 +80,6 @@
       </li>
     </subSounds>
   </SoundDef>
-  
-  
   <SoundDef>
     <defName>Valkyr_4SkillEnd</defName>
     <context>MapOnly</context>
@@ -105,5 +100,4 @@
       </li>
     </subSounds>
   </SoundDef>
- 
 </Defs>

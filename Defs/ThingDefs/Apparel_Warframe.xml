@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-<!-- Ash-->
-  
+  <!-- Ash-->
   <ThingDef ParentName="WarframeApparelBase">
     <defName>WF_Ash_Belt</defName>
     <label>Ash Belt</label>
@@ -21,13 +20,13 @@
     <thingCategories>
       <li>Apparel</li>
     </thingCategories>
-	<comps>
-	  <li Class="Warframe.CompProperties_HPSP">
+    <comps>
+      <li Class="Warframe.CompProperties_HPSP">
         <compClass>Warframe.CompHPSP</compClass>
         <HP>100</HP>
-		<SP>100</SP>
-	  </li>
-	</comps>
+        <SP>100</SP>
+      </li>
+    </comps>
     <apparel>
       <careIfWornByCorpse>false</careIfWornByCorpse>
       <bodyPartGroups>
@@ -41,7 +40,6 @@
       </tags>
     </apparel>
   </ThingDef>
-  
   <ThingDef ParentName="WarframeApparelBase">
     <defName>WF_Ash_Armor</defName>
     <label>Ash Armor</label>
@@ -56,15 +54,15 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <tickerType>Normal</tickerType>
-	<comps>
-	  <li Class="Warframe.CompProperties_WarframeSkill">
+    <comps>
+      <li Class="Warframe.CompProperties_WarframeSkill">
         <compClass>Warframe.CompWarframeSkill</compClass>
         <mana1>25</mana1>
-		<mana2>50</mana2>
-		<mana3>75</mana3>
-		<mana4>25</mana4>
-	  </li>
-	</comps>
+        <mana2>50</mana2>
+        <mana3>75</mana3>
+        <mana4>25</mana4>
+      </li>
+    </comps>
     <statBases>
       <Mass>8</Mass>
       <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
@@ -98,7 +96,6 @@
       </tags>
     </apparel>
   </ThingDef>
-
   <ThingDef ParentName="WarframeApparelBase">
     <defName>WF_Ash_Head</defName>
     <label>Ash Head</label>
@@ -142,9 +139,7 @@
       <hatRenderedFrontOfFace>true</hatRenderedFrontOfFace>
     </apparel>
   </ThingDef>
-  
-<!-- Mesa-->
-  
+  <!-- Mesa-->
   <ThingDef ParentName="WarframeApparelBase">
     <defName>WF_Mesa_Belt</defName>
     <label>Mesa Belt</label>
@@ -164,13 +159,13 @@
     <thingCategories>
       <li>Apparel</li>
     </thingCategories>
-	<comps>
-	  <li Class="Warframe.CompProperties_HPSP">
+    <comps>
+      <li Class="Warframe.CompProperties_HPSP">
         <compClass>Warframe.CompHPSP</compClass>
         <HP>75</HP>
-		<SP>125</SP>
-	  </li>
-	</comps>
+        <SP>125</SP>
+      </li>
+    </comps>
     <apparel>
       <careIfWornByCorpse>false</careIfWornByCorpse>
       <bodyPartGroups>
@@ -184,7 +179,6 @@
       </tags>
     </apparel>
   </ThingDef>
-  
   <ThingDef ParentName="WarframeApparelBase">
     <defName>WF_Mesa_Armor</defName>
     <label>Mesa Armor</label>
@@ -199,15 +193,15 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <tickerType>Normal</tickerType>
-	<comps>
-	  <li Class="Warframe.CompProperties_WarframeSkill">
+    <comps>
+      <li Class="Warframe.CompProperties_WarframeSkill">
         <compClass>Warframe.CompWarframeSkill</compClass>
         <mana1>25</mana1>
-		<mana2>50</mana2>
-		<mana3>75</mana3>
-		<mana4>100</mana4>
-	  </li>
-	</comps>
+        <mana2>50</mana2>
+        <mana3>75</mana3>
+        <mana4>100</mana4>
+      </li>
+    </comps>
     <statBases>
       <Mass>8</Mass>
       <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
@@ -241,7 +235,6 @@
       </tags>
     </apparel>
   </ThingDef>
-
   <ThingDef ParentName="WarframeApparelBase">
     <defName>WF_Mesa_Head</defName>
     <label>Mesa Head</label>
@@ -285,9 +278,7 @@
       <hatRenderedFrontOfFace>true</hatRenderedFrontOfFace>
     </apparel>
   </ThingDef>
-
-<!-- Valkyrie-->
-  
+  <!-- Valkyrie-->
   <ThingDef ParentName="WarframeApparelBase">
     <defName>WF_Valkyrie_Belt</defName>
     <label>Valkyrie Belt</label>
@@ -307,13 +298,13 @@
     <thingCategories>
       <li>Apparel</li>
     </thingCategories>
-	<comps>
-	  <li Class="Warframe.CompProperties_HPSP">
+    <comps>
+      <li Class="Warframe.CompProperties_HPSP">
         <compClass>Warframe.CompHPSP</compClass>
         <HP>100</HP>
-		<SP>100</SP>
-	  </li>
-	</comps>
+        <SP>100</SP>
+      </li>
+    </comps>
     <apparel>
       <careIfWornByCorpse>false</careIfWornByCorpse>
       <bodyPartGroups>
@@ -327,7 +318,6 @@
       </tags>
     </apparel>
   </ThingDef>
-  
   <ThingDef ParentName="WarframeApparelBase">
     <defName>WF_Valkyrie_Armor</defName>
     <label>Valkyrie Armor</label>
@@ -342,15 +332,15 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <tickerType>Normal</tickerType>
-	<comps>
-	  <li Class="Warframe.CompProperties_WarframeSkill">
+    <comps>
+      <li Class="Warframe.CompProperties_WarframeSkill">
         <compClass>Warframe.CompWarframeSkill</compClass>
         <mana1>25</mana1>
-		<mana2>25</mana2>
-		<mana3>50</mana3>
-		<mana4>100</mana4>
-	  </li>
-	</comps>
+        <mana2>25</mana2>
+        <mana3>50</mana3>
+        <mana4>100</mana4>
+      </li>
+    </comps>
     <statBases>
       <Mass>8</Mass>
       <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
@@ -384,7 +374,6 @@
       </tags>
     </apparel>
   </ThingDef>
-
   <ThingDef ParentName="WarframeApparelBase">
     <defName>WF_Valkyrie_Head</defName>
     <label>Valkyrie Head</label>
@@ -428,7 +417,4 @@
       <hatRenderedFrontOfFace>true</hatRenderedFrontOfFace>
     </apparel>
   </ThingDef>
- 
-  
-  
-  </Defs>
+</Defs>

@@ -1,11 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
   <!--Ash-->
   <RecipeDef ParentName="WarframeBodyPartRecipeBase">
     <defName>Make_Ash_Head</defName>
     <label>make Ash head</label>
-
     <ingredients>
       <li>
         <filter>
@@ -132,7 +130,6 @@
       <WFPart_Ash_Inside>1</WFPart_Ash_Inside>
     </products>
   </RecipeDef>
-  
   <!--Mesa-->
   <RecipeDef ParentName="WarframeBodyPartRecipeBase">
     <defName>Make_Mesa_Head</defName>
@@ -393,5 +390,4 @@
       <WFPart_Valkyr_Inside>1</WFPart_Valkyr_Inside>
     </products>
   </RecipeDef>
-
 </Defs>

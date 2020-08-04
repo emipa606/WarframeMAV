@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Manifest>
-  <identifier>WarframeM-A-VPack(Continued)</identifier>
-  <version>1.0.4.0</version>
+  <identifier>WarframeMAV</identifier>
+  <version>1.0.5.0</version>
   <dependencies>
     <li>HugsLib</li>
     <li>HumanoidAlienRaces2.0</li>
@@ -17,5 +17,4 @@
   <manifestUri>https://raw.githubusercontent.com/emipa606/WarframeMAV/master/About/Manifest.xml</manifestUri>
   <downloadUri>https://github.com/emipa606/WarframeMAV/releases</downloadUri>
 </Manifest>
-
 

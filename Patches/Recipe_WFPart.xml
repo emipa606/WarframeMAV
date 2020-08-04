@@ -1,19 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Patch>
-
-	<Operation Class="PatchOperationAdd">
-	 <xpath>*/ThingDef[defName = "FabricationBench"]/recipes</xpath>
-	 <value>
-        <li>Make_Ash_Head</li>
-		<li>Make_Ash_Body</li>
-		<li>Make_Ash_Inside</li>
-        <li>Make_Mesa_Head</li>
-		<li>Make_Mesa_Body</li>
-		<li>Make_Mesa_Inside</li>
-        <li>Make_Valkyr_Head</li>
-		<li>Make_Valkyr_Body</li>
-		<li>Make_Valkyr_Inside</li>
-	 </value>
-	</Operation>
-
+  <Operation Class="PatchOperationAdd">
+    <xpath>*/ThingDef[defName = "FabricationBench"]/recipes</xpath>
+    <value>
+      <li>Make_Ash_Head</li>
+      <li>Make_Ash_Body</li>
+      <li>Make_Ash_Inside</li>
+      <li>Make_Mesa_Head</li>
+      <li>Make_Mesa_Body</li>
+      <li>Make_Mesa_Inside</li>
+      <li>Make_Valkyr_Head</li>
+      <li>Make_Valkyr_Body</li>
+      <li>Make_Valkyr_Inside</li>
+    </value>
+  </Operation>
 </Patch>

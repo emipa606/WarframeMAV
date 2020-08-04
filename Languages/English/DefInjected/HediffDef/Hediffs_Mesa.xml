@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WFMesa1Skill_Start.label>Ballistic Battery(Storaging)</WFMesa1Skill_Start.label>
+  <WFMesa1Skill_End.label>Ballistic Battery(Ready)</WFMesa1Skill_End.label>
+  <WFMesa2Skill_Mesa.label>Shooting Gallery</WFMesa2Skill_Mesa.label>
+  <WFMesa3Skill_Mesa.label>Shatter Shield</WFMesa3Skill_Mesa.label>
+  <WFMesa4Skill_Nomove.label>Standing(Mesa)</WFMesa4Skill_Nomove.label>
+
+
+</LanguageData>

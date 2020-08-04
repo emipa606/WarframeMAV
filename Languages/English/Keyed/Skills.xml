@@ -1,41 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <AshSkill1.name>Shuriken</AshSkill1.name>
   <AshSkill1.desc>Launches a spinning blade of pain, dealing high damage and impaling enemies to walls.</AshSkill1.desc>
-  
   <AshSkill2.name>Smoke Screen</AshSkill2.name>
   <AshSkill2.desc>Drops a smoke bomb that stuns enemies and obscures their vision, rendering Ash invisible for a short time.</AshSkill2.desc>
-  
   <AshSkill3.name>Teleport</AshSkill3.name>
   <AshSkill3.desc>Ash teleports towards the target, bringing him into melee range and making enemies vulnerable to finishers.</AshSkill3.desc>
-  
   <AshSkill4.name>Blade Storm</AshSkill4.name>
   <AshSkill4.desc>Project fierce shadow clones of Ash upon groups of distant enemies. Join the fray using Teleport.</AshSkill4.desc>
-  
-
   <MesaSkill1.name>Ballistic Battery</MesaSkill1.name>
   <MesaSkill1.desc>When activated, this power stores damage caused by guns. When triggered again, that damage is channeled through the next gunshot.</MesaSkill1.desc>
-  
   <MesaSkill2.name>Shooting Gallery</MesaSkill2.name>
   <MesaSkill2.desc>Gives an ally extra damage while jamming the guns of nearby enemies. This power shifts between team members.</MesaSkill2.desc>
-  
   <MesaSkill3.name>Shatter Shield</MesaSkill3.name>
   <MesaSkill3.desc>Envelops Mesa in a barrier of energy, reflecting back incoming bullet damage.</MesaSkill3.desc>
-  
   <MesaSkill4.name>Peacemaker</MesaSkill4.name>
   <MesaSkill4.desc>With intense focus, Mesa draws her Regulator pistols, shooting down her foes in rapid succession.</MesaSkill4.desc>
-
-  
   <ValkyrSkill1.name>Rip Line</ValkyrSkill1.name>
   <ValkyrSkill1.desc>Valkyr hurls forth a hook. If it hits an enemy, she pulls them to her. If it hits ally, she pulls herself to the hook's location.</ValkyrSkill1.desc>
-  
   <ValkyrSkill2.name>Warcry</ValkyrSkill2.name>
   <ValkyrSkill2.desc>Valkyr lets out a rallying cry that bolsters her allies melee speed while slowing down nearby enemies.</ValkyrSkill2.desc>
-  
   <ValkyrSkill3.name>Paralysis</ValkyrSkill3.name>
   <ValkyrSkill3.desc>Valkyr unleashes her shields, stunning and damaging enemies around her.</ValkyrSkill3.desc>
-  
   <ValkyrSkill4.name>Hysteria</ValkyrSkill4.name>
   <ValkyrSkill4.desc>Valkyr is imbued with energy and becomes a ball of vicious rage, capable of unleashing a torrent of deadly claw attacks on unsuspecting foes.</ValkyrSkill4.desc>
+
 </LanguageData>
