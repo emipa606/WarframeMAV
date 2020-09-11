@@ -17,13 +17,15 @@ namespace Warframe.Skills
         //咖喱技能1
         public static Command_CastSkill Skill1()
         {
-            Command_CastSkill ck = new Command_CastSkill();
-            ck.defaultLabel = "MesaSkill1.name".Translate();
-            ck.icon = ContentFinder<Texture2D>.Get("Skills/MesaSkill1");
-            ck.targetingParams = WarframeStaticMethods.onlyPawn();
-            ck.cooldownTime = 0.2f;
-            ck.range = 1f;
-            ck.hotKey = KeyBindingDefOf.Misc5;
+            Command_CastSkill ck = new Command_CastSkill
+            {
+                defaultLabel = "MesaSkill1.name".Translate(),
+                icon = ContentFinder<Texture2D>.Get("Skills/MesaSkill1"),
+                targetingParams = WarframeStaticMethods.OnlyPawn(),
+                cooldownTime = 0.2f,
+                range = 1f,
+                hotKey = KeyBindingDefOf.Misc5
+            };
             ck.action = delegate (Pawn self)
             {
                 foreach(Hediff hef in self.health.hediffSet.hediffs)
@@ -53,7 +55,7 @@ namespace Warframe.Skills
 
 
 
-                WarframeStaticMethods.startCooldown(self, ck.cooldownTime, 1, WarframeStaticMethods.getArmor(self).TryGetComp<CompWarframeSkill>().Props.mana1);
+                WarframeStaticMethods.StartCooldown(self, ck.cooldownTime, 1, WarframeStaticMethods.GetArmor(self).TryGetComp<CompWarframeSkill>().Props.mana1);
 
 
             };
@@ -66,13 +68,15 @@ namespace Warframe.Skills
         //咖喱技能2
         public static Command_CastSkill Skill2()
         {
-            Command_CastSkill ck = new Command_CastSkill();
-            ck.defaultLabel = "MesaSkill2.name".Translate();
-            ck.icon = ContentFinder<Texture2D>.Get("Skills/MesaSkill2");
-            ck.targetingParams = WarframeStaticMethods.onlyPawn();
-            ck.cooldownTime = 1f;
-            ck.range = 1f;
-            ck.hotKey = KeyBindingDefOf.Misc8;
+            Command_CastSkill ck = new Command_CastSkill
+            {
+                defaultLabel = "MesaSkill2.name".Translate(),
+                icon = ContentFinder<Texture2D>.Get("Skills/MesaSkill2"),
+                targetingParams = WarframeStaticMethods.OnlyPawn(),
+                cooldownTime = 1f,
+                range = 1f,
+                hotKey = KeyBindingDefOf.Misc8
+            };
             ck.action = delegate (Pawn self)
             {
 
@@ -92,12 +96,12 @@ namespace Warframe.Skills
 
                 SoundDef.Named("Mesa_2Skill").PlayOneShot(self);
                 Hediff_Mesa2Skill hediff = (Hediff_Mesa2Skill)HediffMaker.MakeHediff(HediffDef.Named("WFMesa2Skill_Mesa"), self, null);
-                hediff.level = (int)self.getLevel();
+                hediff.level = (int)self.GetLevel();
                 self.health.AddHediff(hediff, null, null, null);
 
 
 
-                WarframeStaticMethods.startCooldown(self, ck.cooldownTime * (1 + (self.getLevel() * 1f / 10f)), 2, WarframeStaticMethods.getArmor(self).TryGetComp<CompWarframeSkill>().Props.mana2);
+                WarframeStaticMethods.StartCooldown(self, ck.cooldownTime * (1 + (self.GetLevel() * 1f / 10f)), 2, WarframeStaticMethods.GetArmor(self).TryGetComp<CompWarframeSkill>().Props.mana2);
 
 
             };
@@ -111,13 +115,15 @@ namespace Warframe.Skills
         //咖喱技能3
         public static Command_CastSkill Skill3()
         {
-            Command_CastSkill ck = new Command_CastSkill();
-            ck.defaultLabel = "MesaSkill3.name".Translate();
-            ck.icon = ContentFinder<Texture2D>.Get("Skills/MesaSkill3");
-            ck.targetingParams = WarframeStaticMethods.jumpTP();
-            ck.cooldownTime = 1f;
-            ck.range = 1f;
-            ck.hotKey = KeyBindingDefOf.Misc4;
+            Command_CastSkill ck = new Command_CastSkill
+            {
+                defaultLabel = "MesaSkill3.name".Translate(),
+                icon = ContentFinder<Texture2D>.Get("Skills/MesaSkill3"),
+                targetingParams = WarframeStaticMethods.JumpTP(),
+                cooldownTime = 1f,
+                range = 1f,
+                hotKey = KeyBindingDefOf.Misc4
+            };
             ck.action = delegate (Pawn self)
             {
 
@@ -135,7 +141,7 @@ namespace Warframe.Skills
                 hediff.self = self;
                 self.health.AddHediff(hediff, null, null, null);
 
-                WarframeStaticMethods.startCooldown(self, ck.cooldownTime, 3, WarframeStaticMethods.getArmor(self).TryGetComp<CompWarframeSkill>().Props.mana3);
+                WarframeStaticMethods.StartCooldown(self, ck.cooldownTime, 3, WarframeStaticMethods.GetArmor(self).TryGetComp<CompWarframeSkill>().Props.mana3);
 
 
             };
@@ -148,18 +154,20 @@ namespace Warframe.Skills
         //咖喱技能4
         public static Command_CastSkill Skill4()
         {
-            Command_CastSkill ck = new Command_CastSkill();
-            ck.defaultLabel = "MesaSkill4.name".Translate();
-            ck.icon = ContentFinder<Texture2D>.Get("Skills/MesaSkill4");
-            ck.targetingParams = WarframeStaticMethods.onlyPawn();
-            ck.cooldownTime = 0.2f;
-            ck.range = 1f;
-            ck.hotKey = KeyBindingDefOf.Misc7;
-            // WarframeArmor sa = WarframeStaticMethods.getArmor(ck.self);
+            Command_CastSkill ck = new Command_CastSkill
+            {
+                defaultLabel = "MesaSkill4.name".Translate(),
+                icon = ContentFinder<Texture2D>.Get("Skills/MesaSkill4"),
+                targetingParams = WarframeStaticMethods.OnlyPawn(),
+                cooldownTime = 0.2f,
+                range = 1f,
+                hotKey = KeyBindingDefOf.Misc7
+            };
+            // WarframeArmor sa = WarframeStaticMethods.GetArmor(ck.self);
 
             ck.action = delegate (Pawn self)
             {
-                WarframeArmor wa = WarframeStaticMethods.getArmor(self);
+                WarframeArmor wa = WarframeStaticMethods.GetArmor(self);
                 if (wa.tillSkillOpen > 0)
                 {
                     EndSkill4(self);
@@ -191,7 +199,7 @@ namespace Warframe.Skills
 
 
 
-                WarframeStaticMethods.startCooldown(self, ck.cooldownTime, 4, WarframeStaticMethods.getArmor(self).TryGetComp<CompWarframeSkill>().Props.mana4);
+                WarframeStaticMethods.StartCooldown(self, ck.cooldownTime, 4, WarframeStaticMethods.GetArmor(self).TryGetComp<CompWarframeSkill>().Props.mana4);
 
 
             };
@@ -204,7 +212,7 @@ namespace Warframe.Skills
         public static void EndSkill4(Pawn self)
         {
             SoundDef.Named("Mesa_4SkillEnd").PlayOneShot(self);
-            WarframeArmor wa = WarframeStaticMethods.getArmor(self);
+            WarframeArmor wa = WarframeStaticMethods.GetArmor(self);
             self.equipment.Remove(self.equipment.Primary);//.Primary.Destroy(DestroyMode.Vanish);
             ThingWithComps gun = null;
             try

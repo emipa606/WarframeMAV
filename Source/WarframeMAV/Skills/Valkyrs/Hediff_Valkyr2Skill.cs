@@ -21,7 +21,7 @@ namespace WarframeMAV.Skills.Valkyrs
         {
             get
             {
-                return (this.ageTicks ) >= 420 * (1 + self.getLevel() / 30f);
+                return (this.ageTicks ) >= 420 * (1 + self.GetLevel() / 30f);
             }
         }
 

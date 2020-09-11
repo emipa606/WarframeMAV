@@ -16,14 +16,16 @@ namespace Warframe.Skills
         //咖喱技能1
         public static Command_CastSkillTargeting Skill1()
         {
-            Command_CastSkillTargeting ck = new Command_CastSkillTargeting();
-            ck.defaultLabel = "AshSkill1.name".Translate();
-            ck.icon = ContentFinder<Texture2D>.Get("Skills/AshSkill1");
-            ck.targetingParams = WarframeStaticMethods.onlyPawn();
-            ck.cooldownTime = 0.2f;
-            ck.range = 35f;
+            Command_CastSkillTargeting ck = new Command_CastSkillTargeting
+            {
+                defaultLabel = "AshSkill1.name".Translate(),
+                icon = ContentFinder<Texture2D>.Get("Skills/AshSkill1"),
+                targetingParams = WarframeStaticMethods.OnlyPawn(),
+                cooldownTime = 0.2f,
+                range = 35f
+            };
             ck.finishAction = delegate {
-                //GenDraw.DrawFieldEdges(WarframeStaticMethods.getCellsAround(ck.self.Position, ck.self.Map, ck.range));
+                //GenDraw.DrawFieldEdges(WarframeStaticMethods.GetCellsAround(ck.self.Position, ck.self.Map, ck.range));
                 GenDraw.DrawRadiusRing(ck.self.Position,ck.range);
             };
             ck.hotKey = KeyBindingDefOf.Misc5;
@@ -31,12 +33,12 @@ namespace Warframe.Skills
             {
 
                 // GenExplosion.DoExplosion(self.Position, self.Map, 3.5f, DamageDefOf.Bomb, self, -1, -1, null, null, null, null, null, 0, 1, false, null, 0, 1, 0, false);
-                if (!target.Position.InHorDistOf(self.Position, ck.range))//(!WarframeStaticMethods.getCellsAround(self.Position, self.Map, ck.range).Contains(target.Position))
+                if (!target.Position.InHorDistOf(self.Position, ck.range))//(!WarframeStaticMethods.GetCellsAround(self.Position, self.Map, ck.range).Contains(target.Position))
                 {
                     SoundDefOf.ClickReject.PlayOneShotOnCamera();
                     return;
                 }
-                List<Pawn> linec = WarframeStaticMethods.getLineCell(self, target);
+                List<Pawn> linec = WarframeStaticMethods.GetLineCell(self, target);
                 if (linec == null)
                 {
                     Messages.Message("BeBlockedByBuilding".Translate(), MessageTypeDefOf.RejectInput, false);
@@ -46,7 +48,7 @@ namespace Warframe.Skills
 
                 SoundDef.Named("Ash_1Skill").PlayOneShot(self);
                 int time = 1;
-                if (self.getLevel() > 15) time = 2;
+                if (self.GetLevel() > 15) time = 2;
 
                 for (int i = 0; i < time; i++)
                 {
@@ -60,7 +62,7 @@ namespace Warframe.Skills
                     projectile2.Launch(self, target.Position, target, projectileHitFlags, gun);
                 }
                
-                WarframeStaticMethods.startCooldown(self, ck.cooldownTime, 1, WarframeStaticMethods.getArmor(self).TryGetComp<CompWarframeSkill>().Props.mana1);
+                WarframeStaticMethods.StartCooldown(self, ck.cooldownTime, 1, WarframeStaticMethods.GetArmor(self).TryGetComp<CompWarframeSkill>().Props.mana1);
 
 
             };
@@ -73,13 +75,15 @@ namespace Warframe.Skills
         //咖喱技能2
         public static Command_CastSkill Skill2()
         {
-            Command_CastSkill ck = new Command_CastSkill();
-            ck.defaultLabel = "AshSkill2.name".Translate();
-            ck.icon = ContentFinder<Texture2D>.Get("Skills/AshSkill2");
-            ck.targetingParams = WarframeStaticMethods.onlyPawn();
-            ck.cooldownTime = 2f;
-            ck.range = 1f;
-            ck.hotKey = KeyBindingDefOf.Misc8;
+            Command_CastSkill ck = new Command_CastSkill
+            {
+                defaultLabel = "AshSkill2.name".Translate(),
+                icon = ContentFinder<Texture2D>.Get("Skills/AshSkill2"),
+                targetingParams = WarframeStaticMethods.OnlyPawn(),
+                cooldownTime = 2f,
+                range = 1f,
+                hotKey = KeyBindingDefOf.Misc8
+            };
             ck.action = delegate (Pawn self)
             {
                 SoundDef.Named("Ash_2Skill").PlayOneShot(self);
@@ -89,7 +93,7 @@ namespace Warframe.Skills
                 
                 self.health.AddHediff(hediff,null,null,null);
 
-                WarframeStaticMethods.startCooldown(self, ck.cooldownTime * (1 + (self.getLevel() * 1f / 10f)), 2, WarframeStaticMethods.getArmor(self).TryGetComp<CompWarframeSkill>().Props.mana2);
+                WarframeStaticMethods.StartCooldown(self, ck.cooldownTime * (1 + (self.GetLevel() * 1f / 10f)), 2, WarframeStaticMethods.GetArmor(self).TryGetComp<CompWarframeSkill>().Props.mana2);
 
 
             };
@@ -103,20 +107,22 @@ namespace Warframe.Skills
         //咖喱技能3
         public static Command_CastSkill Skill3()
         {
-            Command_CastSkillTargetingFloor ck = new Command_CastSkillTargetingFloor();
-            ck.defaultLabel = "AshSkill3.name".Translate();
-            ck.icon = ContentFinder<Texture2D>.Get("Skills/AshSkill3");
-            ck.targetingParams = WarframeStaticMethods.jumpTP();
-            ck.cooldownTime = 0.2f;
-            ck.range = 35f;
-            ck.hotKey = KeyBindingDefOf.Misc4;
+            Command_CastSkillTargetingFloor ck = new Command_CastSkillTargetingFloor
+            {
+                defaultLabel = "AshSkill3.name".Translate(),
+                icon = ContentFinder<Texture2D>.Get("Skills/AshSkill3"),
+                targetingParams = WarframeStaticMethods.JumpTP(),
+                cooldownTime = 0.2f,
+                range = 35f,
+                hotKey = KeyBindingDefOf.Misc4
+            };
             ck.finishAction = delegate {
-                //GenDraw.DrawFieldEdges(WarframeStaticMethods.getCellsAround(ck.self.Position, ck.self.Map, ck.range));
+                //GenDraw.DrawFieldEdges(WarframeStaticMethods.GetCellsAround(ck.self.Position, ck.self.Map, ck.range));
                 GenDraw.DrawRadiusRing(ck.self.Position, ck.range);
             };
             ck.action = delegate (Pawn self,LocalTargetInfo target)
             {
-                if (!target.Cell.InHorDistOf(self.Position,ck.range))//!WarframeStaticMethods.getCellsAround(self.Position, self.Map, ck.range).Contains(target.Cell))
+                if (!target.Cell.InHorDistOf(self.Position,ck.range))//!WarframeStaticMethods.GetCellsAround(self.Position, self.Map, ck.range).Contains(target.Cell))
                 {
                     SoundDefOf.ClickReject.PlayOneShotOnCamera();
                     return;
@@ -154,7 +160,7 @@ namespace Warframe.Skills
 
 
 
-                WarframeStaticMethods.startCooldown(self, ck.cooldownTime, 3, WarframeStaticMethods.getArmor(self).TryGetComp<CompWarframeSkill>().Props.mana3);
+                WarframeStaticMethods.StartCooldown(self, ck.cooldownTime, 3, WarframeStaticMethods.GetArmor(self).TryGetComp<CompWarframeSkill>().Props.mana3);
 
 
             };
@@ -167,13 +173,15 @@ namespace Warframe.Skills
         //咖喱技能4
         public static Command_CastSkill Skill4()
         {
-            Command_CastSkill ck = new Command_CastSkill();
-            ck.defaultLabel = "AshSkill4.name".Translate();
-            ck.icon = ContentFinder<Texture2D>.Get("Skills/AshSkill4");
-            ck.targetingParams = WarframeStaticMethods.onlyPawn();
-            ck.cooldownTime = 0.2f;
-            ck.range = 30f;
-            ck.hotKey = KeyBindingDefOf.Misc7;
+            Command_CastSkill ck = new Command_CastSkill
+            {
+                defaultLabel = "AshSkill4.name".Translate(),
+                icon = ContentFinder<Texture2D>.Get("Skills/AshSkill4"),
+                targetingParams = WarframeStaticMethods.OnlyPawn(),
+                cooldownTime = 0.2f,
+                range = 30f,
+                hotKey = KeyBindingDefOf.Misc7
+            };
             ck.action = delegate (Pawn self)
             {
              
@@ -192,7 +200,7 @@ namespace Warframe.Skills
                 }
                 */
                 List<Pawn> plist = new List<Pawn>();
-                foreach(IntVec3 ic in WarframeStaticMethods.getCellsAround(self.Position, self.Map, ck.range))
+                foreach(IntVec3 ic in WarframeStaticMethods.GetCellsAround(self.Position, self.Map, ck.range))
                 {
                     foreach(Thing p in self.Map.thingGrid.ThingsAt(ic))
                     {
@@ -213,7 +221,7 @@ namespace Warframe.Skills
 
                 Ash4Thing ash4t = (Ash4Thing)ThingMaker.MakeThing(ThingDef.Named("AshSkill4Item"));
                 ash4t.self = self;
-                ash4t.damage = 70 * (1 + self.getLevel() / 60f);
+                ash4t.damage = 70 * (1 + self.GetLevel() / 60f);
                 ash4t.affected = plist;
                 ash4t.opos = self.Position;
                 GenSpawn.Spawn(ash4t, self.Position, self.Map);
@@ -221,7 +229,7 @@ namespace Warframe.Skills
 
 
 
-                WarframeStaticMethods.startCooldown(self, ck.cooldownTime, 4, WarframeStaticMethods.getArmor(self).TryGetComp<CompWarframeSkill>().Props.mana4);
+                WarframeStaticMethods.StartCooldown(self, ck.cooldownTime, 4, WarframeStaticMethods.GetArmor(self).TryGetComp<CompWarframeSkill>().Props.mana4);
 
 
             };

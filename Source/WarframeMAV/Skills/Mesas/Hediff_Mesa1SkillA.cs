@@ -28,7 +28,7 @@ namespace WarframeMAV.Skills.Mesas
         {
             get
             {
-                return 40 * (int)(1 + (this.pawn.getLevel() * 1f / 7.5f));
+                return 40 * (int)(1 + (this.pawn.GetLevel() * 1f / 7.5f));
             }
         }
         public bool isMax

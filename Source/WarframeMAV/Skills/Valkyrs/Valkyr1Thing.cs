@@ -45,7 +45,7 @@ namespace WarframeMAV.Skills.Valkyrs
                         }
                         target.stances.stunner.StunFor(120, self);
                         float amount = getDMG();
-                        WarframeStaticMethods.showDamageAmount(target, amount + "");
+                        WarframeStaticMethods.ShowDamageAmount(target, amount + "");
                         DamageInfo dinfo = new DamageInfo(DamageDefOf.Cut, amount,0, -1, self, null, null, DamageInfo.SourceCategory.ThingOrUnknown, target);
 
                         target.TakeDamage(dinfo);
@@ -74,7 +74,7 @@ namespace WarframeMAV.Skills.Valkyrs
 
         private float getDMG() {
             float result = 30f;
-            float levelmul = 1 + self.getLevel() / 30f;
+            float levelmul = 1 + self.GetLevel() / 30f;
             result *= levelmul;
             foreach (Hediff hef in self.health.hediffSet.hediffs)
             {

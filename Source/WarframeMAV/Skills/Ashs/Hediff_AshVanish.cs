@@ -39,7 +39,7 @@ namespace WarframeMAV.Skills.Ashs
         {
             get
             {
-                return (200 * (1 + (this.pawn.getLevel() * 1f / 10f)));
+                return (200 * (1 + (this.pawn.GetLevel() * 1f / 10f)));
             }
         }
 

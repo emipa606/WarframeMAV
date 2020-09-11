@@ -57,12 +57,11 @@ namespace WarframeMAV.Skills.Ashs
                 float y = this.ExactRotation.eulerAngles.y;
                 Thing launcher = this.launcher;
                 ThingDef equipmentDef = this.equipmentDef;
-                float amount = Baseamount * (1+ (launcher as Pawn).getLevel()/6f);
+                float amount = Baseamount * (1+ (launcher as Pawn).GetLevel()/6f);
                 DamageInfo dinfo = new DamageInfo(damageDef, amount, armorPenetration, y, launcher, null, equipmentDef, DamageInfo.SourceCategory.ThingOrUnknown, this.intendedTarget.Thing);
-                WarframeStaticMethods.showDamageAmount(target, amount.ToString());
+                WarframeStaticMethods.ShowDamageAmount(target, amount.ToString());
                 hitThing.TakeDamage(dinfo).AssociateWithLog(battleLogEntry_RangedImpact);
-                Pawn pawn = hitThing as Pawn;
-                if (pawn != null && pawn.stances != null && pawn.BodySize <= this.def.projectile.StoppingPower + 0.001f)
+                if (hitThing is Pawn pawn && pawn.stances != null && pawn.BodySize <= this.def.projectile.StoppingPower + 0.001f)
                 {
                     pawn.stances.StaggerFor(95);
                 }

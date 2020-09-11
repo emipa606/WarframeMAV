@@ -91,7 +91,7 @@ namespace WarframeMAV.Skills.Ashs
                 int damags = (int)((damage+getHandATK()) * timeMul);
                // Log.Warning("FINAL:"+damags +" "+ getHandATK() );
                 DamageInfo dinfo = new DamageInfo(DamageDefOf.Stab, damags, 1, -1, self, null, null, DamageInfo.SourceCategory.ThingOrUnknown, null);
-                WarframeStaticMethods.showDamageAmount(target, damags.ToString());
+                WarframeStaticMethods.ShowDamageAmount(target, damags.ToString());
                 target.TakeDamage(dinfo);
                 hitTime++;
                 SoundDefOf.Pawn_Melee_Punch_HitPawn.PlayOneShot(target);
@@ -118,7 +118,7 @@ namespace WarframeMAV.Skills.Ashs
 
             Tool tool =  melee.def.tools.RandomElement();
          
-            return tool.power*(1 + self.getLevel() / 60f); 
+            return tool.power*(1 + self.GetLevel() / 60f); 
         }
     }
 }

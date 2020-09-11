@@ -25,7 +25,7 @@ namespace WarframeMAV.Skills.Mesas
                 Thing launcher = tv.Field("launcher").GetValue<Thing>();
                 LocalTargetInfo intendedTarget = tv.Field("intendedTarget").GetValue<LocalTargetInfo>();
                 ThingDef equipmentDef = tv.Field("equipmentDef").GetValue<ThingDef>();
-                if (launcher is Pawn && (launcher as Pawn).isWarframe())
+                if (launcher is Pawn && (launcher as Pawn).IsWarframe())
                 {
                     Pawn wf = launcher as Pawn;
                     foreach(Hediff hef in wf.health.hediffSet.hediffs)
@@ -35,7 +35,7 @@ namespace WarframeMAV.Skills.Mesas
                             Hediff_Mesa1SkillB hf = hef as Hediff_Mesa1SkillB;
                             int damage = hf.sdamage;
                             DamageInfo dinfo = new DamageInfo(DamageDefOf.Bullet, damage, 1, -1, wf, null, null, DamageInfo.SourceCategory.ThingOrUnknown, null);
-                            WarframeStaticMethods.showDamageAmount(hitThing, damage.ToString());
+                            WarframeStaticMethods.ShowDamageAmount(hitThing, damage.ToString());
                             if (hitThing is Pawn && (hitThing as Pawn).Dead) return;
                             hitThing.TakeDamage(dinfo);
                             {
@@ -52,16 +52,16 @@ namespace WarframeMAV.Skills.Mesas
                         {
                             if(hitThing is Pawn)
                             {
-                                float bfb = 0.4f * (1 + (wf.getLevel() * 1f / 30f));
+                                float bfb = 0.4f * (1 + (wf.GetLevel() * 1f / 30f));
 
 
                                 float amount = __instance.DamageAmount*bfb;
-                                float maxsdmg = 2 * (1 + (wf.getLevel() * 1f / 5f));
+                                float maxsdmg = 2 * (1 + (wf.GetLevel() * 1f / 5f));
                                 if (amount > maxsdmg) amount = maxsdmg;
                                 Hediff_Mesa1SkillA hfa = hef as Hediff_Mesa1SkillA;
                                 if (!hfa.isMax)
                                 {
-                                    WarframeStaticMethods.showColorText(hitThing, "Add " + (int)amount + " Damage", Color.green, GameFont.Small);
+                                    WarframeStaticMethods.ShowColorText(hitThing, "Add " + (int)amount + " Damage", Color.green, GameFont.Small);
                                 }
                                 hfa.add((int)amount);
 
@@ -73,13 +73,13 @@ namespace WarframeMAV.Skills.Mesas
                             if (hitThing != null)
                             {
                                 DamageDef damageDef = __instance.def.projectile.damageDef;
-                                float amount = (float)__instance.DamageAmount * 0.1f * (1+ (wf.getLevel()*1f/20f));
+                                float amount = (float)__instance.DamageAmount * 0.1f * (1+ (wf.GetLevel()*1f/20f));
                                 float armorPenetration = __instance.ArmorPenetration;
                                 float y = __instance.ExactRotation.eulerAngles.y;
                                
                                 
                                 DamageInfo dinfo = new DamageInfo(damageDef, amount, armorPenetration, y, launcher, null, equipmentDef, DamageInfo.SourceCategory.ThingOrUnknown,intendedTarget.Thing);
-                                WarframeStaticMethods.showColorText(hitThing, "Extra " + (int)amount + " Damage", Color.red, GameFont.Small);
+                                WarframeStaticMethods.ShowColorText(hitThing, "Extra " + (int)amount + " Damage", Color.red, GameFont.Small);
                                 if (hitThing is Pawn && (hitThing as Pawn).Dead) return;
                                 hitThing.TakeDamage(dinfo);
                               
@@ -110,17 +110,16 @@ namespace WarframeMAV.Skills.Mesas
 
             if (__instance is Pawn)
             {
-                Pawn wf = __instance as Pawn;
-                if (wf != null && wf.isWarframe())
+                if (__instance is Pawn wf && wf.IsWarframe())
                 {
                     foreach (Hediff hed in wf.health.hediffSet.hediffs)
                     {
                         if (hed.def.defName == "WFMesa3Skill_Mesa")
                         {
-                            float finaldmg = dinfo.Amount * (1- (0.5f * (1 + (wf.getLevel() * 1f / 50f))));
+                            float finaldmg = dinfo.Amount * (1 - (0.5f * (1 + (wf.GetLevel() * 1f / 50f))));
                             DamageInfo dinfonew = new DamageInfo(dinfo.Def, finaldmg, dinfo.ArmorPenetrationInt, dinfo.Angle, dinfo.Instigator, null, dinfo.Weapon, DamageInfo.SourceCategory.ThingOrUnknown, dinfo.IntendedTarget);
                             dinfo = dinfonew;
-                            WarframeStaticMethods.showColorText(wf,"final damage:"+finaldmg,Color.yellow,GameFont.Small);
+                            WarframeStaticMethods.ShowColorText(wf, "final damage:" + finaldmg, Color.yellow, GameFont.Small);
                             break;
                         }
                     }
@@ -144,8 +143,7 @@ namespace WarframeMAV.Skills.Mesas
 
             if (hitThing is Pawn)
             {
-                Pawn wf = hitThing as Pawn;
-                if (wf != null && wf.isWarframe())
+                if (hitThing is Pawn wf && wf.IsWarframe())
                 {
                     Traverse tv = Traverse.Create(__instance);
                     Thing launcher = tv.Field("launcher").GetValue<Thing>();
@@ -154,11 +152,11 @@ namespace WarframeMAV.Skills.Mesas
                         if (hed.def.defName == "WFMesa3Skill_Mesa")
                         {
                             ThingDef bdef = __instance.def;
-                            
-                          
-                            Projectile projectile2 = (Projectile)GenSpawn.Spawn(bdef,wf.Position,wf.Map);
+
+
+                            Projectile projectile2 = (Projectile)GenSpawn.Spawn(bdef, wf.Position, wf.Map);
                             ProjectileHitFlags projectileHitFlags = ProjectileHitFlags.All;
-                            projectile2.Launch(wf, wf.Position.ToVector3(),launcher.Position, launcher, projectileHitFlags, null, null);
+                            projectile2.Launch(wf, wf.Position.ToVector3(), launcher.Position, launcher, projectileHitFlags, null, null);
 
 
                             break;
@@ -185,7 +183,7 @@ namespace WarframeMAV.Skills.Mesas
 
             Traverse tv = Traverse.Create(__instance);
             Pawn wf = tv.Field("pawn").GetValue<Pawn>();
-            if (wf.isWarframe())
+            if (wf.IsWarframe())
             {
                 List<Verb> verbs = wf.equipment.AllEquipmentVerbs.ToList();
                 foreach (Verb vb in verbs) {
@@ -227,9 +225,8 @@ namespace WarframeMAV.Skills.Mesas
             Verb verb = __instance.TryGetAttackVerb(targ.Thing, allowManualCastWeapons);
             if(verb!=null&& verb is Verb_Mesa)
             {
-                Verb_Mesa vba = verb as Verb_Mesa;
-               // Log.Warning("IS MESA VERB");
-                __result= vba != null && vba.MesaTryStartCastOn(targ, false, true);
+                // Log.Warning("IS MESA VERB");
+                __result = verb is Verb_Mesa vba && vba.MesaTryStartCastOn(targ, false, true);
                 return false;
             }else
             {

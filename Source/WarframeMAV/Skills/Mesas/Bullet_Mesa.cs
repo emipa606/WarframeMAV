@@ -30,14 +30,13 @@ namespace WarframeMAV.Skills.Mesas
                 float finaldmg = changeDamage(amount);
                 DamageInfo dinfo = new DamageInfo(damageDef, finaldmg, armorPenetration, y, launcher, null, equipmentDef, DamageInfo.SourceCategory.ThingOrUnknown, this.intendedTarget.Thing);
                 if (isCR) {
-                    WarframeStaticMethods.showColorText(hitThing,"X3 -"+finaldmg,Color.magenta,GameFont.Medium);
+                    WarframeStaticMethods.ShowColorText(hitThing,"X3 -"+finaldmg,Color.magenta,GameFont.Medium);
                 }else
                 {
-                    WarframeStaticMethods.showDamageAmount(hitThing,finaldmg+"");
+                    WarframeStaticMethods.ShowDamageAmount(hitThing,finaldmg+"");
                 }
                 hitThing.TakeDamage(dinfo).AssociateWithLog(battleLogEntry_RangedImpact);
-                Pawn pawn = hitThing as Pawn;
-                if (pawn != null && pawn.stances != null && pawn.BodySize <= this.def.projectile.StoppingPower + 0.001f)
+                if (hitThing is Pawn pawn && pawn.stances != null && pawn.BodySize <= this.def.projectile.StoppingPower + 0.001f)
                 {
                     pawn.stances.StaggerFor(95);
                 }
@@ -59,7 +58,7 @@ namespace WarframeMAV.Skills.Mesas
 
         private float changeDamage(float damage) {
             float result = damage;
-            float levelmul = 1+(1 * (this.launcher as Pawn).getLevel()*1f/60f);
+            float levelmul = 1+(1 * (this.launcher as Pawn).GetLevel()*1f/60f);
 
             result = result + result * levelmul;
 

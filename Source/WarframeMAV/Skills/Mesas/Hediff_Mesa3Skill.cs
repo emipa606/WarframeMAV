@@ -38,7 +38,7 @@ namespace WarframeMAV.Skills.Mesas
         {
             get
             {
-                return (600 * (1 + ((WarframeStaticMethods.getWFLevel(self) * 1.0f) / 20f)));
+                return (600 * (1 + ((WarframeStaticMethods.GetWFLevel(self) * 1.0f) / 20f)));
             }
         }
         public void DrawHediffExtras()

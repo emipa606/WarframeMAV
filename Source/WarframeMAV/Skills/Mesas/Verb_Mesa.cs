@@ -29,7 +29,7 @@ namespace WarframeMAV.Skills.Mesas
             if (lastShotTick!=0 && Find.TickManager.TicksGame - lastShotTick >=60) {
                 this.newWarmupTime = this.verbProps.warmupTime;
                 this.lastShotTick = 0;
-                WarframeStaticMethods.showColorText(this.caster, "ShootSpeedReset!", UnityEngine.Color.cyan, GameFont.Medium);
+                WarframeStaticMethods.ShowColorText(this.caster, "ShootSpeedReset!", UnityEngine.Color.cyan, GameFont.Medium);
             }
         }
 
@@ -71,8 +71,7 @@ namespace WarframeMAV.Skills.Mesas
             this.currentTarget = castTarg;
             if (this.CasterIsPawn && this.verbProps.warmupTime > 0f)
             {
-                ShootLine newShootLine;
-                if (!this.TryFindShootLineFromTo(this.caster.Position, castTarg, out newShootLine))
+                if (!this.TryFindShootLineFromTo(this.caster.Position, castTarg, out ShootLine newShootLine))
                 {
                     return false;
                 }
@@ -112,8 +111,7 @@ namespace WarframeMAV.Skills.Mesas
         public override void WarmupComplete()
         {
             base.WarmupComplete();
-            Pawn pawn = this.currentTarget.Thing as Pawn;
-            if (pawn != null && !pawn.Downed && base.CasterIsPawn && base.CasterPawn.skills != null)
+            if (this.currentTarget.Thing is Pawn pawn && !pawn.Downed && base.CasterIsPawn && base.CasterPawn.skills != null)
             {
                 float num = (!pawn.HostileTo(this.caster)) ? 20f : 170f;
                 float num2 = this.verbProps.AdjustedFullCycleTime(this, base.CasterPawn);
@@ -139,7 +137,7 @@ namespace WarframeMAV.Skills.Mesas
                 if (this.newWarmupTime > 0.001f)
                 {
                     this.newWarmupTime *= 0.9f;
-                    //WarframeStaticMethods.showColorText(this.caster, newWarmupTime + "?", UnityEngine.Color.cyan, GameFont.Medium);
+                    //WarframeStaticMethods.ShowColorText(this.caster, newWarmupTime + "?", UnityEngine.Color.cyan, GameFont.Medium);
                 }
 
                 if (this.newWarmupTime < 0.001f) this.newWarmupTime = 0;//= 0.001f;

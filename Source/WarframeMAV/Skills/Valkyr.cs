@@ -17,14 +17,16 @@ namespace Warframe.Skills
         //咖喱技能1
         public static Command_CastSkillTargeting Skill1()
         {
-            Command_CastSkillTargeting ck = new Command_CastSkillTargeting();
-            ck.defaultLabel = "ValkyrSkill1.name".Translate();
-            ck.icon = ContentFinder<Texture2D>.Get("Skills/ValkyrSkill1");
-            ck.targetingParams = WarframeStaticMethods.onlyPawn();
-            ck.cooldownTime = 0.7f;
-            ck.range = 35f;
+            Command_CastSkillTargeting ck = new Command_CastSkillTargeting
+            {
+                defaultLabel = "ValkyrSkill1.name".Translate(),
+                icon = ContentFinder<Texture2D>.Get("Skills/ValkyrSkill1"),
+                targetingParams = WarframeStaticMethods.OnlyPawn(),
+                cooldownTime = 0.7f,
+                range = 35f
+            };
             ck.finishAction = delegate {
-                //GenDraw.DrawFieldEdges(WarframeStaticMethods.getCellsAround(ck.self.Position, ck.self.Map, ck.range));
+                //GenDraw.DrawFieldEdges(WarframeStaticMethods.GetCellsAround(ck.self.Position, ck.self.Map, ck.range));
                 GenDraw.DrawRadiusRing(ck.self.Position,ck.range);
             };
             ck.hotKey = KeyBindingDefOf.Misc5;
@@ -32,12 +34,12 @@ namespace Warframe.Skills
             {
 
                 // GenExplosion.DoExplosion(self.Position, self.Map, 3.5f, DamageDefOf.Bomb, self, -1, -1, null, null, null, null, null, 0, 1, false, null, 0, 1, 0, false);
-                if (!target.Position.InHorDistOf(self.Position, ck.range))//(!WarframeStaticMethods.getCellsAround(self.Position, self.Map, ck.range).Contains(target.Position))
+                if (!target.Position.InHorDistOf(self.Position, ck.range))//(!WarframeStaticMethods.GetCellsAround(self.Position, self.Map, ck.range).Contains(target.Position))
                 {
                     SoundDefOf.ClickReject.PlayOneShotOnCamera();
                     return;
                 }
-                List<Pawn> linec = WarframeStaticMethods.getLineCell(self, target);
+                List<Pawn> linec = WarframeStaticMethods.GetLineCell(self, target);
                 if (linec == null)
                 {
                     Messages.Message("BeBlockedByBuilding".Translate(), MessageTypeDefOf.RejectInput, false);
@@ -56,7 +58,7 @@ namespace Warframe.Skills
                 GenSpawn.Spawn(ash4t, self.Position, self.Map);
 
                 Hediff_Valkyr1Skill hediff = (Hediff_Valkyr1Skill)HediffMaker.MakeHediff(HediffDef.Named("WFValkyr1Skill_Mul"), self, null);
-                WarframeStaticMethods.startCooldown(self, ck.cooldownTime, 1, WarframeStaticMethods.getArmor(self).TryGetComp<CompWarframeSkill>().Props.mana1);
+                WarframeStaticMethods.StartCooldown(self, ck.cooldownTime, 1, WarframeStaticMethods.GetArmor(self).TryGetComp<CompWarframeSkill>().Props.mana1);
 
                 foreach (Hediff hef in self.health.hediffSet.hediffs)
                 {
@@ -81,19 +83,21 @@ namespace Warframe.Skills
         //咖喱技能2
         public static Command_CastSkill Skill2()
         {
-            Command_CastSkill ck = new Command_CastSkill();
-            ck.defaultLabel = "ValkyrSkill2.name".Translate();
-            ck.icon = ContentFinder<Texture2D>.Get("Skills/ValkyrSkill2");
-            ck.targetingParams = WarframeStaticMethods.onlyPawn();
-            ck.cooldownTime = 2f;
-            ck.range = 16f;
-            ck.hotKey = KeyBindingDefOf.Misc8;
+            Command_CastSkill ck = new Command_CastSkill
+            {
+                defaultLabel = "ValkyrSkill2.name".Translate(),
+                icon = ContentFinder<Texture2D>.Get("Skills/ValkyrSkill2"),
+                targetingParams = WarframeStaticMethods.OnlyPawn(),
+                cooldownTime = 2f,
+                range = 16f,
+                hotKey = KeyBindingDefOf.Misc8
+            };
             ck.action = delegate (Pawn self)
             {
                 SoundDef.Named("Valkyr_2Skill").PlayOneShot(self);
                 self.stances.stunner.StunFor(40,self);
 
-                foreach (IntVec3 ic in WarframeStaticMethods.getCellsAround(self.Position,self.Map,ck.range))
+                foreach (IntVec3 ic in WarframeStaticMethods.GetCellsAround(self.Position,self.Map,ck.range))
                 {
                     foreach(Thing th in self.Map.thingGrid.ThingsAt(ic))
                     {
@@ -119,7 +123,7 @@ namespace Warframe.Skills
                 
                 
 
-                WarframeStaticMethods.startCooldown(self, ck.cooldownTime * (1 + (self.getLevel() * 1f / 10f)), 2, WarframeStaticMethods.getArmor(self).TryGetComp<CompWarframeSkill>().Props.mana2);
+                WarframeStaticMethods.StartCooldown(self, ck.cooldownTime * (1 + (self.GetLevel() * 1f / 10f)), 2, WarframeStaticMethods.GetArmor(self).TryGetComp<CompWarframeSkill>().Props.mana2);
 
 
             };
@@ -133,27 +137,29 @@ namespace Warframe.Skills
         //咖喱技能3
         public static Command_CastSkill Skill3()
         {
-            Command_CastSkill ck = new Command_CastSkill();
-            ck.defaultLabel = "ValkyrSkill3.name".Translate();
-            ck.icon = ContentFinder<Texture2D>.Get("Skills/ValkyrSkill3");
-            ck.targetingParams = WarframeStaticMethods.jumpTP();
-            ck.cooldownTime = 0.2f;
-            ck.range = 10f;
-            ck.hotKey = KeyBindingDefOf.Misc4;
+            Command_CastSkill ck = new Command_CastSkill
+            {
+                defaultLabel = "ValkyrSkill3.name".Translate(),
+                icon = ContentFinder<Texture2D>.Get("Skills/ValkyrSkill3"),
+                targetingParams = WarframeStaticMethods.JumpTP(),
+                cooldownTime = 0.2f,
+                range = 10f,
+                hotKey = KeyBindingDefOf.Misc4
+            };
             ck.action = delegate (Pawn self)
             {
 
                
                 SoundDef.Named("Valkyr_3Skill").PlayOneShot(self);
-                WarframeBelt wb = WarframeStaticMethods.getBelt(self);
+                WarframeBelt wb = WarframeStaticMethods.GetBelt(self);
                 float damage = wb.Energy * 5;
-                float levelmul = 2 + (1 * self.getLevel() / 30f);
+                float levelmul = 2 + (1 * self.GetLevel() / 30f);
                 damage *= levelmul;
 
 
 
 
-                foreach (IntVec3 ic in WarframeStaticMethods.getCellsAround(self.Position, self.Map, ck.range))
+                foreach (IntVec3 ic in WarframeStaticMethods.GetCellsAround(self.Position, self.Map, ck.range))
                 {
                     foreach (Thing th in self.Map.thingGrid.ThingsAt(ic))
                     {
@@ -163,7 +169,7 @@ namespace Warframe.Skills
                             {
                                 (th as Pawn).stances.stunner.StunFor(150,self);
                                 DamageInfo dinfo = new DamageInfo(DamageDefOf.Blunt, damage,0, -1, self, null, null, DamageInfo.SourceCategory.ThingOrUnknown, th);
-                                WarframeStaticMethods.showDamageAmount(th,damage+"");
+                                WarframeStaticMethods.ShowDamageAmount(th,damage+"");
                                 th.TakeDamage(dinfo);
                                 MoteThrown moteThrown = (MoteThrown)ThingMaker.MakeThing(ThingDefOf.Mote_Smoke, null);
                                 moteThrown.Scale = Rand.Range(1.5f, 2.5f);
@@ -183,11 +189,11 @@ namespace Warframe.Skills
 
 
                 float adde = wb.Energy * -0.33f;
-                wb.addEnergy(adde*100);
+                wb.AddEnergy(adde*100);
                 DamageInfo wfdinfo = new DamageInfo(DamageDefOf.Stun, 1, 0, -1, self, null, null, DamageInfo.SourceCategory.ThingOrUnknown, self);
                 self.TakeDamage(wfdinfo);
 
-                WarframeStaticMethods.startCooldown(self, ck.cooldownTime, 3, WarframeStaticMethods.getArmor(self).TryGetComp<CompWarframeSkill>().Props.mana3);
+                WarframeStaticMethods.StartCooldown(self, ck.cooldownTime, 3, WarframeStaticMethods.GetArmor(self).TryGetComp<CompWarframeSkill>().Props.mana3);
 
 
             };
@@ -200,18 +206,20 @@ namespace Warframe.Skills
         //咖喱技能4
         public static Command_CastSkill Skill4()
         {
-            Command_CastSkill ck = new Command_CastSkill();
-            ck.defaultLabel = "ValkyrSkill4.name".Translate();
-            ck.icon = ContentFinder<Texture2D>.Get("Skills/ValkyrSkill4");
-            ck.targetingParams = WarframeStaticMethods.onlyPawn();
-            ck.cooldownTime = 0.2f;
-            ck.range = 1f;
-            ck.hotKey = KeyBindingDefOf.Misc7;
-            // WarframeArmor sa = WarframeStaticMethods.getArmor(ck.self);
+            Command_CastSkill ck = new Command_CastSkill
+            {
+                defaultLabel = "ValkyrSkill4.name".Translate(),
+                icon = ContentFinder<Texture2D>.Get("Skills/ValkyrSkill4"),
+                targetingParams = WarframeStaticMethods.OnlyPawn(),
+                cooldownTime = 0.2f,
+                range = 1f,
+                hotKey = KeyBindingDefOf.Misc7
+            };
+            // WarframeArmor sa = WarframeStaticMethods.GetArmor(ck.self);
 
             ck.action = delegate (Pawn self)
             {
-                WarframeArmor wa = WarframeStaticMethods.getArmor(self);
+                WarframeArmor wa = WarframeStaticMethods.GetArmor(self);
                 if (wa.tillSkillOpen > 0)
                 {
                     EndSkill4(self);
@@ -247,7 +255,7 @@ namespace Warframe.Skills
 
 
 
-                WarframeStaticMethods.startCooldown(self, ck.cooldownTime, 4, WarframeStaticMethods.getArmor(self).TryGetComp<CompWarframeSkill>().Props.mana4);
+                WarframeStaticMethods.StartCooldown(self, ck.cooldownTime, 4, WarframeStaticMethods.GetArmor(self).TryGetComp<CompWarframeSkill>().Props.mana4);
 
 
             };
@@ -260,7 +268,7 @@ namespace Warframe.Skills
         public static void EndSkill4(Pawn self)
         {
             SoundDef.Named("Valkyr_4SkillEnd").PlayOneShot(self);
-            WarframeArmor wa = WarframeStaticMethods.getArmor(self);
+            WarframeArmor wa = WarframeStaticMethods.GetArmor(self);
             self.equipment.Remove(self.equipment.Primary);//.Primary.Destroy(DestroyMode.Vanish);
             ThingWithComps gun = null;
             try

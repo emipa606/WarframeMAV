@@ -59,7 +59,7 @@ namespace WarframeMAV.Skills.Mesas
         {
             get
             {
-                return this.ageTicks / 60 >= (15 * (1+this.pawn.getLevel()*1f/30f));
+                return this.ageTicks / 60 >= (15 * (1+this.pawn.GetLevel()*1f/30f));
             }
         }
         public bool ShouldAffectEnemy
