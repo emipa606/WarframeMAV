@@ -1,14 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <Bullet_MesaBullet.label>Mesa Bullet</Bullet_MesaBullet.label>
-
   <Mesa_SkillGun.label>Peacemaker</Mesa_SkillGun.label>
   <Mesa_SkillGun.description>Peacemaker.</Mesa_SkillGun.description>
-
   <Valkyr_SkillBlade.label>Valkyr Talons</Valkyr_SkillBlade.label>
   <Valkyr_SkillBlade.description>A simple automatic gun made to be mounted on a turret.</Valkyr_SkillBlade.description>
   <Valkyr_SkillBlade.tools.0.label>blade</Valkyr_SkillBlade.tools.0.label>
-
-
 </LanguageData>

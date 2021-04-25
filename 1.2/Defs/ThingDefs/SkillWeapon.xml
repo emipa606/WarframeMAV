@@ -18,7 +18,7 @@
   <ThingDef ParentName="BaseGunWithQuality">
     <defName>Mesa_SkillGun</defName>
     <label>peacemaker</label>
-    <description>A simple automatic gun made to be mounted on a turret.</description>
+    <description>peacemaker</description>
     <graphicData>
       <texPath>Items/PeaceMaker</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -60,7 +60,7 @@
     <defName>Valkyr_SkillBlade</defName>
     <label>Valkyr Talons</label>
     <techLevel>Industrial</techLevel>
-    <description>A simple automatic gun made to be mounted on a turret.</description>
+    <description>Valkyr Talons</description>
     <graphicData>
       <texPath>Items/ValkyrTalons</texPath>
       <graphicClass>Graphic_Single</graphicClass>

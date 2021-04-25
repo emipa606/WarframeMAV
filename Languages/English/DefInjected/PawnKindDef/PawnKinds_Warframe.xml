@@ -1,13 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <Warframe_Ash.label>Ash</Warframe_Ash.label>
   <Warframe_Mesa.label>Mesa</Warframe_Mesa.label>
   <Warframe_Valkyr.label>Valkyr</Warframe_Valkyr.label>
-
-
   <!--<Warframe_Ash.labelPlural>Ash</Warframe_Ash.labelPlural>-->
   <!--<Warframe_Mesa.labelPlural>Mesa</Warframe_Mesa.labelPlural>-->
   <!--<Warframe_Valkyr.labelPlural>Valkyr</Warframe_Valkyr.labelPlural>-->
-
 </LanguageData>
