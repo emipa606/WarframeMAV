@@ -1,31 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Verse;
-using Warframe;
+﻿using Verse;
 
 namespace WarframeMAV.Skills.Mesas
 {
-    public class Hediff_Mesa1SkillB: HediffWithComps
+    public class Hediff_Mesa1SkillB : HediffWithComps
     {
+        public int sdamage;
 
-        public int sdamage = 0;
+
+        public override string LabelInBrackets => base.LabelInBrackets + "Damage:" + sdamage;
+
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look<int>(ref this.sdamage, "sdamage", 0, false);
+            Scribe_Values.Look(ref sdamage, "sdamage");
         }
-
-
-        public override string LabelInBrackets
-        {
-            get
-            {
-                return base.LabelInBrackets + "Damage:" + this.sdamage;
-            }
-        }
-
-
-
     }
 }

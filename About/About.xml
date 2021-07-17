@@ -8,6 +8,7 @@
     <li>1.0</li>
     <li>1.1</li>
     <li>1.2</li>
+    <li>1.3</li>
   </supportedVersions>
   <modDependencies>
     <li>
@@ -34,18 +35,20 @@
     <li>erdelf.HumanoidAlienRaces</li>
     <li>Warframe</li>
   </loadAfter>
-  <description>Continuation of AKreedz mod
+  <description>[img]https://i.imgur.com/WAEzk68.png[/img]
+Update of AKreedz mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1529582998
 
-[img]https://i.imgur.com/GYswkZ7.png[/img]
+[img]https://i.imgur.com/7Gzt3Rg.png[/img]
 
-Support-chat:
-https://invite.gg/mlie
-
-Non-Steam version:
-https://github.com/emipa606/WarframeMAV
-
---- Original Description ---
+[table]
+	[tr]
+		[td][url=https://invite.gg/Mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
+		[td][url=https://github.com/emipa606/WarframeMAV][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+	[/tr]
+[/table]
+	
+[img]https://i.imgur.com/NOW7jU1.png[/img]
 
 Addon Pack of Warframe MOD
 
@@ -66,6 +69,6 @@ Valkyr
 [*] Do not report errors by making a discussion-thread, I get no notification of that.
 [*] If you have the solution for a problem, please post it to the GitHub repository.
 [/list]
+
 </description>
 </ModMetaData>
-

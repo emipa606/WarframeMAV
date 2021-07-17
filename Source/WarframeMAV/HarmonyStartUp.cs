@@ -1,5 +1,5 @@
-﻿using HarmonyLib;
-using System.Reflection;
+﻿using System.Reflection;
+using HarmonyLib;
 using Verse;
 
 namespace WarframeMAV
@@ -9,7 +9,6 @@ namespace WarframeMAV
     {
         static HarmonyStartUp()
         {
-
             new Harmony("akreedz.rimworld.warframemav").PatchAll(Assembly.GetExecutingAssembly());
             Log.Message("Warframe M-A-V Harmony Add");
         }

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WFVanish_Ash</defName>
+    <description>Vanish</description>
+    <label>Vanish(Ash)</label>
+    <isBad>false</isBad>
+    <hediffClass>WarframeMAV.Skills.Ashs.Hediff_AshVanish</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>0.001</initialSeverity>
+  </HediffDef>
+</Defs>

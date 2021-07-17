@@ -1,17 +1,13 @@
-﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using UnityEngine;
+﻿using UnityEngine;
 using Verse;
-using Verse.Sound;
 using Warframe;
 
 namespace WarframeMAV.Skills.Ashs
 {
-    public class Bullet_1Ash:Projectile
+    public class Bullet_1Ash : Projectile
     {
         public Pawn target;
+
         public override void Tick()
         {
             base.Tick();
@@ -27,44 +23,48 @@ namespace WarframeMAV.Skills.Ashs
 
             }
             */
-          //  this.origin = this.ExactPosition;
-  
-            this.destination = target.Position.ToVector3();
+            //  this.origin = this.ExactPosition;
+
+            destination = target.Position.ToVector3();
             Draw();
-            
         }
 
         public override void Draw()
         {
-            float rotat = (Find.TickManager.TicksGame*25f) % 360;
-            Mesh mesh = MeshPool.GridPlane(this.def.graphicData.drawSize);
-            Graphics.DrawMesh(mesh, this.DrawPos, rotat.ToQuat(), this.def.DrawMatSingle, 0);
-            base.Comps_PostDraw();
+            var rotat = Find.TickManager.TicksGame * 25f % 360;
+            var mesh = MeshPool.GridPlane(def.graphicData.drawSize);
+            Graphics.DrawMesh(mesh, DrawPos, rotat.ToQuat(), def.DrawMatSingle, 0);
+            Comps_PostDraw();
         }
+
         // Token: 0x060026E7 RID: 9959 RVA: 0x00127F60 File Offset: 0x00126360
         protected override void Impact(Thing hitThingf)
         {
-            Thing hitThing = this.target;
-            Map map = base.Map;
+            Thing hitThing = target;
+            var unused = Map;
             base.Impact(hitThing);
-            BattleLogEntry_RangedImpact battleLogEntry_RangedImpact = new BattleLogEntry_RangedImpact(this.launcher, hitThing, this.intendedTarget.Thing, this.equipmentDef, this.def, this.targetCoverDef);
+            var battleLogEntry_RangedImpact = new BattleLogEntry_RangedImpact(launcher, hitThing,
+                intendedTarget.Thing, equipmentDef, def, targetCoverDef);
             Find.BattleLog.Add(battleLogEntry_RangedImpact);
-            if (hitThing != null)
+            if (hitThing == null)
             {
-                DamageDef damageDef = this.def.projectile.damageDef;
-                float Baseamount = (float)base.DamageAmount;
-                float armorPenetration = base.ArmorPenetration;
-                float y = this.ExactRotation.eulerAngles.y;
-                Thing launcher = this.launcher;
-                ThingDef equipmentDef = this.equipmentDef;
-                float amount = Baseamount * (1+ (launcher as Pawn).GetLevel()/6f);
-                DamageInfo dinfo = new DamageInfo(damageDef, amount, armorPenetration, y, launcher, null, equipmentDef, DamageInfo.SourceCategory.ThingOrUnknown, this.intendedTarget.Thing);
-                WarframeStaticMethods.ShowDamageAmount(target, amount.ToString());
-                hitThing.TakeDamage(dinfo).AssociateWithLog(battleLogEntry_RangedImpact);
-                if (hitThing is Pawn pawn && pawn.stances != null && pawn.BodySize <= this.def.projectile.StoppingPower + 0.001f)
-                {
-                    pawn.stances.StaggerFor(95);
-                }
+                return;
+            }
+
+            var damageDef = def.projectile.damageDef;
+            float Baseamount = DamageAmount;
+            var armorPenetration = ArmorPenetration;
+            var y = ExactRotation.eulerAngles.y;
+            var instigator = launcher;
+            var thingDef = equipmentDef;
+            var amount = Baseamount * (1 + ((instigator as Pawn).GetLevel() / 6f));
+            var dinfo = new DamageInfo(damageDef, amount, armorPenetration, y, instigator, null, thingDef,
+                DamageInfo.SourceCategory.ThingOrUnknown, intendedTarget.Thing);
+            WarframeStaticMethods.ShowDamageAmount(target, amount.ToString());
+            hitThing.TakeDamage(dinfo).AssociateWithLog(battleLogEntry_RangedImpact);
+            if (hitThing is Pawn {stances: { }} pawn && pawn.BodySize <= def.projectile.StoppingPower + 0.001f)
+            {
+                pawn.stances.StaggerFor(95);
             }
             /*
             else

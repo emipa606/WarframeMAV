@@ -14,11 +14,4 @@
   <WF_Mesa_Armor.description>Mesa Armor.</WF_Mesa_Armor.description>
   <WF_Mesa_Head.label>Warframe Head</WF_Mesa_Head.label>
   <WF_Mesa_Head.description>Mesa Head.</WF_Mesa_Head.description>
-  <!-- Valkyrie -->
-  <WF_Valkyrie_Belt.label>Warframe Belt</WF_Valkyrie_Belt.label>
-  <WF_Valkyrie_Belt.description>Valkyrie Belt.</WF_Valkyrie_Belt.description>
-  <WF_Valkyrie_Armor.label>Warframe Armor</WF_Valkyrie_Armor.label>
-  <WF_Valkyrie_Armor.description>Valkyrie Armor.</WF_Valkyrie_Armor.description>
-  <WF_Valkyrie_Head.label>Warframe Head</WF_Valkyrie_Head.label>
-  <WF_Valkyrie_Head.description>Valkyrie Head.</WF_Valkyrie_Head.description>
 </LanguageData>

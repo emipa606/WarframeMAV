@@ -1,7 +1,5 @@
 ﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using UnityEngine;
 using Verse;
 using Warframe;
 
@@ -9,149 +7,152 @@ namespace WarframeMAV.Skills.Mesas
 {
     public class Verb_Mesa : Verb_LaunchProjectile
     {
-        private float newWarmupTime=99;
         private int lastShotTick;
-        public float NWT
-        {
-            get
-            {
-                return this.newWarmupTime;
-            }
-        }
+        private float newWarmupTime = 99;
+
+        public float NWT => newWarmupTime;
+
+
+        protected override int ShotsPerBurst => verbProps.burstShotCount;
+
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look<float>(ref this.newWarmupTime,"newWarmupTime",0,false);
-            Scribe_Values.Look<int>(ref this.lastShotTick, "lastShotTick", 0, false);
+            Scribe_Values.Look(ref newWarmupTime, "newWarmupTime");
+            Scribe_Values.Look(ref lastShotTick, "lastShotTick");
         }
 
-        public void resetSpeed() {
-            if (lastShotTick!=0 && Find.TickManager.TicksGame - lastShotTick >=60) {
-                this.newWarmupTime = this.verbProps.warmupTime;
-                this.lastShotTick = 0;
-                WarframeStaticMethods.ShowColorText(this.caster, "ShootSpeedReset!", UnityEngine.Color.cyan, GameFont.Medium);
-            }
-        }
-
-
-        protected override int ShotsPerBurst
+        public void resetSpeed()
         {
-            get
+            if (lastShotTick == 0 || Find.TickManager.TicksGame - lastShotTick < 60)
             {
-                return this.verbProps.burstShotCount;
+                return;
             }
+
+            newWarmupTime = verbProps.warmupTime;
+            lastShotTick = 0;
+            WarframeStaticMethods.ShowColorText(caster, "ShootSpeedReset!", Color.cyan, GameFont.Medium);
         }
 
 
-        public bool MesaTryStartCastOn(LocalTargetInfo castTarg, bool surpriseAttack = false, bool canHitNonTargetPawns = true)
+        public bool MesaTryStartCastOn(LocalTargetInfo castTarg, bool attack = false,
+            bool canHitNonTargetPawns = true)
         {
-            if (this.newWarmupTime > this.verbProps.warmupTime)
+            if (newWarmupTime > verbProps.warmupTime)
             {
-                this.newWarmupTime = this.verbProps.warmupTime;
+                newWarmupTime = verbProps.warmupTime;
             }
-            if (this.caster == null)
+
+            if (caster == null)
             {
-                Log.Error("Verb " + this.GetUniqueLoadID() + " needs caster to work (possibly lost during saving/loading).", false);
+                Log.Error("Verb " + GetUniqueLoadID() + " needs caster to work (possibly lost during saving/loading).");
                 return false;
             }
-            if (!this.caster.Spawned)
+
+            if (!caster.Spawned)
             {
                 return false;
             }
-            if (this.state == VerbState.Bursting || !this.CanHitTarget(castTarg))
+
+            if (state == VerbState.Bursting || !CanHitTarget(castTarg))
             {
                 return false;
             }
-            if (this.CausesTimeSlowdown(castTarg))
+
+            if (CausesTimeSlowdown(castTarg))
             {
                 Find.TickManager.slower.SignalForceNormalSpeed();
             }
-            this.surpriseAttack = surpriseAttack;
-            this.canHitNonTargetPawnsNow = canHitNonTargetPawns;
-            this.currentTarget = castTarg;
-            if (this.CasterIsPawn && this.verbProps.warmupTime > 0f)
+
+            surpriseAttack = attack;
+            canHitNonTargetPawnsNow = canHitNonTargetPawns;
+            currentTarget = castTarg;
+            if (CasterIsPawn && verbProps.warmupTime > 0f)
             {
-                if (!this.TryFindShootLineFromTo(this.caster.Position, castTarg, out ShootLine newShootLine))
+                if (!TryFindShootLineFromTo(caster.Position, castTarg, out var newShootLine))
                 {
                     return false;
                 }
-                this.CasterPawn.Drawer.Notify_WarmingCastAlongLine(newShootLine, this.caster.Position);
-                float statValue = this.CasterPawn.GetStatValue(StatDefOf.AimingDelayFactor, true);
-                int ticks = (this.newWarmupTime * statValue).SecondsToTicks();
-                this.CasterPawn.stances.SetStance(new Stance_Warmup(ticks, castTarg, this));
+
+                CasterPawn.Drawer.Notify_WarmingCastAlongLine(newShootLine, caster.Position);
+                var statValue = CasterPawn.GetStatValue(StatDefOf.AimingDelayFactor);
+                var ticks = (newWarmupTime * statValue).SecondsToTicks();
+                CasterPawn.stances.SetStance(new Stance_Warmup(ticks, castTarg, this));
             }
             else
             {
-                this.WarmupComplete();
+                WarmupComplete();
             }
+
             return true;
         }
 
 
-
         private bool CausesTimeSlowdown(LocalTargetInfo castTarg)
         {
-            if (!this.verbProps.CausesTimeSlowdown)
+            if (!verbProps.CausesTimeSlowdown)
             {
                 return false;
             }
+
             if (!castTarg.HasThing)
             {
                 return false;
             }
-            Thing thing = castTarg.Thing;
-            return (thing.def.category == ThingCategory.Pawn || (thing.def.building != null && thing.def.building.IsTurret)) && ((thing.Faction == Faction.OfPlayer && this.caster.HostileTo(Faction.OfPlayer)) || (this.caster.Faction == Faction.OfPlayer && thing.HostileTo(Faction.OfPlayer)));
+
+            var thing = castTarg.Thing;
+            return (thing.def.category == ThingCategory.Pawn ||
+                    thing.def.building is {IsTurret: true}) &&
+                   (thing.Faction == Faction.OfPlayer && caster.HostileTo(Faction.OfPlayer) ||
+                    caster.Faction == Faction.OfPlayer && thing.HostileTo(Faction.OfPlayer));
         }
-
-
-
 
 
         // Token: 0x06006413 RID: 25619 RVA: 0x001B4CF0 File Offset: 0x001B30F0
         public override void WarmupComplete()
         {
             base.WarmupComplete();
-            if (this.currentTarget.Thing is Pawn pawn && !pawn.Downed && base.CasterIsPawn && base.CasterPawn.skills != null)
+            if (currentTarget.Thing is not Pawn pawn || pawn.Downed || !base.CasterIsPawn ||
+                base.CasterPawn.skills == null)
             {
-                float num = (!pawn.HostileTo(this.caster)) ? 20f : 170f;
-                float num2 = this.verbProps.AdjustedFullCycleTime(this, base.CasterPawn);
-                base.CasterPawn.skills.Learn(SkillDefOf.Shooting, num * num2, false);
+                return;
             }
+
+            var num = !pawn.HostileTo(caster) ? 20f : 170f;
+            var num2 = verbProps.AdjustedFullCycleTime(this, base.CasterPawn);
+            base.CasterPawn.skills.Learn(SkillDefOf.Shooting, num * num2);
         }
 
         // Token: 0x06006414 RID: 25620 RVA: 0x001B4D90 File Offset: 0x001B3190
         protected override bool TryCastShot()
         {
-            bool flag = base.TryCastShot();
-
-
-      
-            if (flag && base.CasterIsPawn)
+            if (!base.TryCastShot() || !base.CasterIsPawn)
             {
-                base.CasterPawn.records.Increment(RecordDefOf.ShotsFired);
-
-                if (this.newWarmupTime > this.verbProps.warmupTime)
-                {
-                    this.newWarmupTime = this.verbProps.warmupTime;
-                }
-                if (this.newWarmupTime > 0.001f)
-                {
-                    this.newWarmupTime *= 0.9f;
-                    //WarframeStaticMethods.ShowColorText(this.caster, newWarmupTime + "?", UnityEngine.Color.cyan, GameFont.Medium);
-                }
-
-                if (this.newWarmupTime < 0.001f) this.newWarmupTime = 0;//= 0.001f;
-
-               
-
-                this.lastShotTick = Find.TickManager.TicksGame;
-
-
-
+                return base.TryCastShot();
             }
-          
-            return flag;
-        }
 
+            base.CasterPawn.records.Increment(RecordDefOf.ShotsFired);
+
+            if (newWarmupTime > verbProps.warmupTime)
+            {
+                newWarmupTime = verbProps.warmupTime;
+            }
+
+            if (newWarmupTime > 0.001f)
+            {
+                newWarmupTime *= 0.9f;
+                //WarframeStaticMethods.ShowColorText(this.caster, newWarmupTime + "?", UnityEngine.Color.cyan, GameFont.Medium);
+            }
+
+            if (newWarmupTime < 0.001f)
+            {
+                newWarmupTime = 0; //= 0.001f;
+            }
+
+
+            lastShotTick = Find.TickManager.TicksGame;
+
+            return base.TryCastShot();
+        }
     }
 }

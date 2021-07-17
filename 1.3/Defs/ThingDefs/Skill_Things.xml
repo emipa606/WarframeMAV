@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--Ash-->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Ash1Bullet</defName>
+    <label>Shuriken</label>
+    <thingClass>WarframeMAV.Skills.Ashs.Bullet_1Ash</thingClass>
+    <graphicData>
+      <texPath>Items/Bullet_Ash</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Cut</damageDef>
+      <damageAmountBase>10</damageAmountBase>
+      <speed>20</speed>
+    </projectile>
+  </ThingDef>
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>AshSkill4Item</defName>
+    <label>eeeeeemmsmmmfm</label>
+    <thingClass>WarframeMAV.Skills.Ashs.Ash4Thing</thingClass>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <drawOffscreen>true</drawOffscreen>
+    <seeThroughFog>false</seeThroughFog>
+  </ThingDef>
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>ValkyrSkill1Item</defName>
+    <label>eeeeeemmsgggmmmfm</label>
+    <thingClass>WarframeMAV.Skills.Valkyrs.Valkyr1Thing</thingClass>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <drawOffscreen>true</drawOffscreen>
+    <seeThroughFog>false</seeThroughFog>
+  </ThingDef>
+</Defs>

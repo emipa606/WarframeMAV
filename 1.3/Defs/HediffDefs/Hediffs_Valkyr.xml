@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WFValkyr1Skill_Mul</defName>
+    <label>Rip Line</label>
+    <description>Rip Line</description>
+    <isBad>false</isBad>
+    <hediffClass>WarframeMAV.Skills.Valkyrs.Hediff_Valkyr1Skill</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>0.001</initialSeverity>
+  </HediffDef>
+  <HediffDef>
+    <defName>WFValkyr2Skill_Enemy</defName>
+    <label>Warcry(Enemy)</label>
+    <description>Warcry(Enemy)</description>
+    <isBad>false</isBad>
+    <hediffClass>WarframeMAV.Skills.Valkyrs.Hediff_Valkyr2Skill</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>0.001</initialSeverity>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.3</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>WFValkyr2Skill_Ally</defName>
+    <label>Warcry(Ally)</label>
+    <description>Warcry(Ally)</description>
+    <isBad>false</isBad>
+    <hediffClass>WarframeMAV.Skills.Valkyrs.Hediff_Valkyr2Skill</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>0.001</initialSeverity>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.3</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

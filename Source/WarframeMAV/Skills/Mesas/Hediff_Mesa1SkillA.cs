@@ -1,54 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Verse;
+﻿using Verse;
 using Warframe;
 
 namespace WarframeMAV.Skills.Mesas
 {
-    public class Hediff_Mesa1SkillA: HediffWithComps
+    public class Hediff_Mesa1SkillA : HediffWithComps
     {
+        public int sdamage;
 
-        public int sdamage = 0;
+        public int maxdamage => 40 * (int) (1 + (pawn.GetLevel() * 1f / 7.5f));
+
+        public bool isMax => sdamage >= maxdamage;
+
+        public override string LabelInBrackets =>
+            base.LabelInBrackets + "NowDamage:" + sdamage + (sdamage >= maxdamage ? "(Max)" : "");
+
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look<int>(ref this.sdamage, "sdamage", 0, false);
+            Scribe_Values.Look(ref sdamage, "sdamage");
         }
+
         public void add(int damage)
         {
-            this.sdamage += damage;
+            sdamage += damage;
             if (isMax)
             {
-                this.sdamage = this.maxdamage;
+                sdamage = maxdamage;
             }
         }
-
-        public int maxdamage
-        {
-            get
-            {
-                return 40 * (int)(1 + (this.pawn.GetLevel() * 1f / 7.5f));
-            }
-        }
-        public bool isMax
-        {
-            get
-            {
-                return this.sdamage >= this.maxdamage;
-            }
-        }
-
-        public override string LabelInBrackets
-        {
-            get
-            {
-
-                return base.LabelInBrackets + "NowDamage:" + this.sdamage+(sdamage>=maxdamage?"(Max)":"");
-            }
-        }
-
-
-
     }
 }

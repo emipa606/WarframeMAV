@@ -1,7 +1,5 @@
-﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 using Verse.Sound;
 using Warframe;
@@ -11,28 +9,25 @@ namespace WarframeMAV.Skills.Ashs
 {
     public class Ash4Thing : ThingWithComps
     {
-        public Pawn self;
         public List<Pawn> affected;
         public float damage;
-        public int lastATKTick=-1;
+        public int hitTime;
+        public int lastATKTick = -1;
         public IntVec3 opos;
-        public int hitTime = 0;
-        
-
+        public Pawn self;
 
 
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_References.Look<Pawn>(ref this.self, "self", false);
-            Scribe_Values.Look<float>(ref this.damage, "damage", 0, false);
-            Scribe_Values.Look<int>(ref this.lastATKTick, "lastATKTick", 0, false);
-            Scribe_Values.Look<int>(ref this.hitTime, "hitTime", 0, false);
-            Scribe_Values.Look<IntVec3>(ref this.opos, "opos", default(IntVec3), false);
-            Scribe_Collections.Look<Pawn>(ref this.affected, "affected", LookMode.Reference, new object[0]);
-
-
+            Scribe_References.Look(ref self, "self");
+            Scribe_Values.Look(ref damage, "damage");
+            Scribe_Values.Look(ref lastATKTick, "lastATKTick");
+            Scribe_Values.Look(ref hitTime, "hitTime");
+            Scribe_Values.Look(ref opos, "opos");
+            Scribe_Collections.Look(ref affected, "affected", LookMode.Reference);
         }
+
         public override void Draw()
         {
             //base.Draw();
@@ -41,39 +36,38 @@ namespace WarframeMAV.Skills.Ashs
         public override void Tick()
         {
             base.Tick();
-           
+
             if (affected.Count < 1)
             {
-                self.SetPositionDirect(this.opos);
+                self.SetPositionDirect(opos);
                 self.pather.StopDead();
-                foreach (Hediff hed in self.health.hediffSet.hediffs)
+                foreach (var hed in self.health.hediffSet.hediffs)
                 {
                     if (hed.def.defName == "WFGod")
                     {
                         //self.health.RemoveHediff(hed);
-                        ((Hediff_God)hed).del = true;
+                        ((Hediff_God) hed).del = true;
                     }
                 }
-                
-                this.Destroy(DestroyMode.Vanish);
-                return;
-            }
-            if(self==null|| self.Dead || !self.Spawned)
-            {
-                this.Destroy(DestroyMode.Vanish);
+
+                Destroy();
                 return;
             }
 
-            Pawn target = affected[0];
-
-
-
-
-            if(this.lastATKTick<1 || Find.TickManager.TicksGame - this.lastATKTick > 60)
+            if (self == null || self.Dead || !self.Spawned)
             {
-                this.lastATKTick = Find.TickManager.TicksGame;
-                Hediff_God hediff = (Hediff_God)HediffMaker.MakeHediff(HediffDef.Named("WFGod"), self, null);
-                self.health.AddHediff(hediff, null, null, null);
+                Destroy();
+                return;
+            }
+
+            var target = affected[0];
+
+
+            if (lastATKTick < 1 || Find.TickManager.TicksGame - lastATKTick > 60)
+            {
+                lastATKTick = Find.TickManager.TicksGame;
+                var hediff = (Hediff_God) HediffMaker.MakeHediff(HediffDef.Named("WFGod"), self);
+                self.health.AddHediff(hediff);
                 self.stances.stunner.StunFor(180, self);
                 if (!target.Dead)
                 {
@@ -82,43 +76,41 @@ namespace WarframeMAV.Skills.Ashs
                 }
                 //play sound to do
             }
-      
+
             //atk
-             
-            if ((Find.TickManager.TicksGame - this.lastATKTick)%20==0&&hitTime<3 && !target.Dead &&target.Spawned)
+
+            if ((Find.TickManager.TicksGame - lastATKTick) % 20 == 0 && hitTime < 3 && !target.Dead && target.Spawned)
             {
-                float timeMul = (hitTime==2)?1:0.5f;
-                int damags = (int)((damage+getHandATK()) * timeMul);
-               // Log.Warning("FINAL:"+damags +" "+ getHandATK() );
-                DamageInfo dinfo = new DamageInfo(DamageDefOf.Stab, damags, 1, -1, self, null, null, DamageInfo.SourceCategory.ThingOrUnknown, null);
+                var timeMul = hitTime == 2 ? 1 : 0.5f;
+                var damags = (int) ((damage + getHandATK()) * timeMul);
+                // Log.Warning("FINAL:"+damags +" "+ getHandATK() );
+                var dinfo = new DamageInfo(DamageDefOf.Stab, damags, 1, -1, self);
                 WarframeStaticMethods.ShowDamageAmount(target, damags.ToString());
                 target.TakeDamage(dinfo);
                 hitTime++;
                 SoundDefOf.Pawn_Melee_Punch_HitPawn.PlayOneShot(target);
             }
-            if (Find.TickManager.TicksGame - this.lastATKTick == 60)
-            {
 
-                    affected.RemoveAt(0);
-                hitTime = 0;
-  
+            if (Find.TickManager.TicksGame - lastATKTick != 60)
+            {
+                return;
             }
 
-
-            
-            
+            affected.RemoveAt(0);
+            hitTime = 0;
         }
 
-        private float getHandATK() {
-            ThingWithComps melee  = self.equipment.Primary;
-            if(melee==null || melee.def.tools == null)
+        private float getHandATK()
+        {
+            var melee = self.equipment.Primary;
+            if (melee == null || melee.def.tools == null)
             {
                 return 0;
             }
 
-            Tool tool =  melee.def.tools.RandomElement();
-         
-            return tool.power*(1 + self.GetLevel() / 60f); 
+            var tool = melee.def.tools.RandomElement();
+
+            return tool.power * (1 + (self.GetLevel() / 60f));
         }
     }
 }
