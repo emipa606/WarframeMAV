@@ -1,14 +1,20 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using Verse;
+using Warframe;
 
 namespace WarframeMAV.Skills.Mesas
 {
     [HarmonyPatch(typeof(Pawn), "TryStartAttack", typeof(LocalTargetInfo))]
     public static class Harmony_Mesa4SkillB
     {
-        public static bool Prefix(Pawn __instance, LocalTargetInfo targ, bool __result)
+        public static bool Prefix(Pawn __instance, LocalTargetInfo targ, ref bool __result)
         {
+            if (!__instance.IsWarframe())
+            {
+                return true;
+            }
+
             var tv = Traverse.Create(__instance);
             var stances = tv.Field("stances").GetValue<Pawn_StanceTracker>();
             var story = tv.Field("story").GetValue<Pawn_StoryTracker>();

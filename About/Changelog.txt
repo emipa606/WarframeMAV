@@ -1,5 +1,8 @@
 # Changelog for WarframeMAV
 
+1.0.11.0 - TryStartAttack-patch had no IsWarframe check, fixed. Thanks iforgotmysocks for info!
+
+
 1.0.10.0 - Mod updated for 1.3 and passed autotests
 
 
