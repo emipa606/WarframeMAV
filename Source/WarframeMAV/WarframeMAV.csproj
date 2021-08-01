@@ -23,6 +23,7 @@
   <ItemGroup>
     <Reference Include="Warframe">
       <HintPath>..\..\..\Warframe\1.3\Assemblies\Warframe.dll</HintPath>
+      <ExcludeAssets>runtime</ExcludeAssets>
     </Reference>
   </ItemGroup>
   <!-- 1.3.3061-beta -->

@@ -1,5 +1,8 @@
 # Changelog for WarframeMAV
 
+1.0.12.0 - Should no longer cause issues with RimSec in 1.2
+
+
 1.0.11.0 - TryStartAttack-patch had no IsWarframe check, fixed. Thanks iforgotmysocks for info!
 
 
